@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="../css/fontawesome-free-5.15.3-web/css/all.css"
+      rel="stylesheet"
+    />
+    <title>Orinoco | E-commerce</title>
+    <style>
+      .move-item:hover {
+        transform: translateZ(100px) translateX(-5px) translateY(-10px);
+        box-shadow: 25px 14px 29px 0 rgba(0, 0, 0, 0.35);
+      }
+      .-rotate-35 {
+        --tw-rotate: -35deg;
+      }
+    </style>
+  </head>
+  <body class="text-gray-900 leading-normal">
+    <div role="document" class="min-h-screen flex flex-col">
+      <header
+        role="banner"
+        class="w-full p-4 bg-gray-100 flex items-center justify-between"
+      >
+        <a href="/" rel="home" class="text-lg font-bold leading-tight"
+          >Orinoco</a
+        >
+        <nav role="navigation" tabindex="-1" aria-label="Main">
+          <ul class="flex align-center spacing-x-4">
+            <li><a href="#content" aria-current="page">Accueil</a></li>
+          </ul>
+        </nav>
+      </header>
+      <main class="flex-grow w-full p-4" id="content" tabindex="-1">
+        <div class="max-w-5xl mx-auto mt-10">
+          <h1
+            class="
+              text-5xl
+              lg:text-3xl
+              font-bold
+              leading-tight
+              mb-4
+              text-center
+            "
+          >
+            Catalogue de produits
+          </h1>
+          <p class="leading-tight text-lg mb-4 text-center from-gray-400">
+            Idées cadeaux - Livraison gratuite - 100% de satisfaction
+          </p>
+          <div class="flex mt-10">
+            <div class="flex mx-auto space-y-1">
+              <div
+                class="
+                  bg-gradient-to-r
+                  from-cyan-400
+                  to-fuchsia-600
+                  rounded-full
+                  p-1
+                "
+              >
+                <div class="flex flex-wrap justify-center">
+                  <div class="w-6/12 sm:w-4/12 px-4">
+                    <img
+                      class="rounded-full border border-gray-100 shadow-sm"
+                      src="../css/img/Capture d’écran 2021-07-22 à 11.48.21.png"
+                      alt="logo"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <section class="text-gray-600 body-font py-5">
+            <div class="container px-5 py-5 mx-auto">
+              <div class="text-center mb-20">
+                <p
+                  class="
+                    text-base
+                    leading-relaxed
+                    xl:w-2/4
+                    lg:w-3/4
+                    mx-auto
+                    text-gray-500s
+                  "
+                >
+                  Explorez nos catégories de produits
+                </p>
+                <div class="flex mt-6 justify-center">
+                  <div
+                    class="w-16 h-1 rounded-full bg-indigo-500 inline-flex"
+                  ></div>
+                </div>
+              </div>
+              <div
+                class="
+                  flex flex-wrap
+                  sm:-m-4
+                  -mx-4
+                  -mb-10
+                  -mt-4
+                  md:space-y-0
+                  space-y-6
+                "
+              >
+                <div
+                  class="p-4 md:w-1/3 flex flex-col text-center items-center"
+                >
+                  <div
+                    class="
+                      w-20
+                      h-20
+                      inline-flex
+                      items-center
+                      justify-center
+                      rounded-full
+                      bg-indigo-100
+                      text-indigo-500
+                      mb-5
+                      flex-shrink-0
+                    "
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      x="0px"
+                      y="0px"
+                      width="50"
+                      height="50"
+                      viewBox="0 0 172 172"
+                      style="fill: #000000"
+                    >
+                      <g
+                        fill="none"
+                        fill-rule="nonzero"
+                        stroke="none"
+                        stroke-width="1"
+                        stroke-linecap="butt"
+                        stroke-linejoin="miter"
+                        stroke-miterlimit="10"
+                        stroke-dasharray=""
+                        stroke-dashoffset="0"
+                        font-family="none"
+                        font-weight="none"
+                        font-size="none"
+                        text-anchor="none"
+                        style="mix-blend-mode: normal"
+                      >
+                        <path d="M0,172v-172h172v172z" fill="none"></path>
+                        <g fill="#6366f2">
+                          <path
+                            d="M56.115,0c-2.62031,0 -4.71656,1.03469 -6.9875,2.365c-2.27094,1.33031 -4.52844,3.10406 -6.3425,5.0525c-4.31344,4.6225 -5.71094,8.21031 -6.5575,11.7175c-1.04812,4.34031 0.55094,8.58656 3.01,11.9325c1.85438,2.53969 4.27313,4.68969 6.9875,6.235c-0.95406,3.46688 -1.505,7.095 -1.505,10.8575c0,6.31563 1.42438,12.26844 3.9775,17.63c-3.21156,1.69313 -29.33406,15.43969 -35.475,18.5975c-3.26531,1.67969 -6.40969,3.9775 -8.385,7.4175c-1.97531,3.44 -2.32469,8.04906 -0.215,12.685c2.17688,4.79719 6.235,7.37719 9.9975,7.955c3.7625,0.57781 7.14875,-0.38969 9.5675,-1.29c4.8375,-1.81406 13.98844,-5.73781 19.2425,-7.955l-1.505,12.5775c-11.05906,5.36156 -16.78344,19.29625 -13.545,33.0025c3.66844,15.49344 17.69719,25.94781 31.7125,22.575c6.46344,-1.55875 11.63688,-5.71094 14.9425,-11.2875c3.52063,0.52406 7.17563,0.86 10.965,0.86c3.80281,0 7.44438,-0.33594 10.965,-0.86c3.30563,5.57656 8.47906,9.72875 14.9425,11.2875c14.01531,3.37281 28.04406,-7.08156 31.7125,-22.575c3.25188,-13.74656 -2.53969,-27.66781 -13.6525,-33.0025l-1.505,-12.5775c5.21375,2.19031 14.48563,6.14094 19.35,7.955c2.41875,0.90031 5.805,1.86781 9.5675,1.29c3.7625,-0.57781 7.82063,-3.15781 9.9975,-7.955c2.10969,-4.63594 1.76031,-9.245 -0.215,-12.685c-1.97531,-3.44 -5.11969,-5.73781 -8.385,-7.4175c-6.15437,-3.15781 -32.50531,-17.28062 -35.3675,-18.8125c2.48594,-5.29437 3.87,-11.19344 3.87,-17.415c0,-3.7625 -0.55094,-7.39062 -1.505,-10.8575c2.71438,-1.54531 5.13313,-3.69531 6.9875,-6.235c2.45906,-3.34594 4.05813,-7.59219 3.01,-11.9325c-0.84656,-3.50719 -2.24406,-7.095 -6.5575,-11.7175c-1.81406,-1.94844 -4.07156,-3.72219 -6.3425,-5.0525c-2.27094,-1.33031 -4.36719,-2.365 -6.9875,-2.365c-6.9875,0 -13.19562,3.56094 -16.77,9.03c-4.12531,-1.3975 -8.51937,-2.15 -13.115,-2.15c-4.59562,0 -8.98969,0.7525 -13.115,2.15c-3.57437,-5.46906 -9.7825,-9.03 -16.77,-9.03zM56.115,6.88c4.16563,0 7.80719,1.96188 10.2125,4.945c-7.74,4.20594 -13.98844,10.91125 -17.7375,18.92c-1.42437,-0.99437 -2.76812,-2.28437 -3.7625,-3.655c-1.63937,-2.23062 -2.35156,-4.59562 -1.935,-6.3425c0.76594,-3.19812 1.23625,-4.73 4.945,-8.7075c1.26313,-1.35719 3.03688,-2.76812 4.73,-3.7625c1.69313,-0.99437 3.39969,-1.3975 3.5475,-1.3975zM115.885,6.88c0.14781,0 1.85438,0.40313 3.5475,1.3975c1.69313,0.99438 3.46688,2.40531 4.73,3.7625c3.70875,3.9775 4.17906,5.50938 4.945,8.7075c0.41656,1.74688 -0.29562,4.11188 -1.935,6.3425c-0.99437,1.37063 -2.33812,2.66063 -3.7625,3.655c-3.74906,-8.00875 -9.9975,-14.71406 -17.7375,-18.92c2.40531,-2.98312 6.04688,-4.945 10.2125,-4.945zM86,13.76c14.48563,0 26.84813,8.86875 31.9275,21.5c-0.08062,0.99438 0.26875,1.97531 0.9675,2.6875c1.00781,3.23844 1.505,6.63813 1.505,10.2125c0,8.6 -3.18469,16.4475 -8.385,22.4675c0.92719,-2.74125 1.505,-5.65719 1.505,-8.7075c0,-10.4275 -5.83187,-19.52469 -14.405,-24.1875c2.35156,-0.48375 4.085,-2.56656 4.085,-5.0525c0,-2.84875 -2.31125,-5.16 -5.16,-5.16c-2.84875,0 -5.16,2.31125 -5.16,5.16c0,1.06156 0.30906,2.08281 0.86,2.9025c-2.45906,-0.72562 -5.0525,-1.1825 -7.74,-1.1825c-2.6875,0 -5.28094,0.45688 -7.74,1.1825c0.55094,-0.81969 0.86,-1.84094 0.86,-2.9025c0,-2.84875 -2.31125,-5.16 -5.16,-5.16c-2.84875,0 -5.16,2.31125 -5.16,5.16c0,2.48594 1.73344,4.56875 4.085,5.0525c-8.57312,4.66281 -14.405,13.76 -14.405,24.1875c0,3.05031 0.57781,5.96625 1.505,8.7075c-5.20031,-6.02 -8.385,-13.8675 -8.385,-22.4675c0,-3.57437 0.49719,-6.97406 1.505,-10.2125c0.69875,-0.71219 1.04813,-1.69312 0.9675,-2.6875c5.07938,-12.63125 17.44188,-21.5 31.9275,-21.5zM86,41.28c11.43531,0 20.64,9.20469 20.64,20.64c0,10.65594 -7.94156,19.37688 -18.275,20.5325c-0.76594,0.08063 -1.57219,0.1075 -2.365,0.1075c-0.71219,0 -1.45125,-0.04031 -2.15,-0.1075c-0.06719,0 -0.14781,0 -0.215,0c-10.33344,-1.15562 -18.275,-9.87656 -18.275,-20.5325c0,-11.43531 9.20469,-20.64 20.64,-20.64zM86,44.72c-5.6975,0 -10.32,4.6225 -10.32,10.32c0,5.6975 4.6225,10.32 10.32,10.32c5.6975,0 10.32,-4.6225 10.32,-10.32c0,-5.6975 -4.6225,-10.32 -10.32,-10.32zM119.97,71.595c2.55313,1.35719 29.22656,15.60094 35.69,18.92c2.56656,1.31688 4.6225,3.03688 5.59,4.73c0.9675,1.69313 1.1825,3.37281 -0.215,6.45c-1.37062,3.01 -2.82187,3.57438 -4.73,3.87c-1.90812,0.29563 -4.34031,-0.18812 -6.1275,-0.86c-5.65719,-2.10969 -24.51,-10.105 -24.51,-10.105c-1.11531,-0.45687 -2.40531,-0.29562 -3.37281,0.43c-0.9675,0.72563 -1.49156,1.90813 -1.35719,3.1175l1.8275,15.5875c-2.58,-0.30906 -5.16,-0.24187 -7.6325,0.3225c-1.89469,0.43 -3.72219,1.16906 -5.4825,2.0425c-2.0425,-11.20687 -11.86531,-19.78 -23.65,-19.78c-11.78469,0 -21.6075,8.57313 -23.65,19.78c-1.76031,-0.87344 -3.58781,-1.6125 -5.4825,-2.0425c-1.66625,-0.37625 -3.3325,-0.55094 -5.0525,-0.5375c-0.86,0.01344 -1.69312,0.1075 -2.58,0.215l1.8275,-15.5875c0.13438,-1.20937 -0.38969,-2.39187 -1.35719,-3.1175c-0.9675,-0.72562 -2.2575,-0.88687 -3.37281,-0.43c0,0 -18.85281,7.99531 -24.51,10.105c-1.78719,0.67188 -4.21937,1.15563 -6.1275,0.86c-1.90812,-0.29562 -3.35937,-0.9675 -4.73,-3.9775c-1.3975,-3.07719 -1.1825,-4.64937 -0.215,-6.3425c0.9675,-1.69312 3.13094,-3.41312 5.6975,-4.73c6.39625,-3.27875 32.84125,-17.3075 35.69,-18.8125c6.90688,9.90344 18.03313,16.6625 30.745,17.63c0.1075,0.01344 0.215,-0.01344 0.3225,0c0.92719,0.09406 1.84094,0.1075 2.795,0.1075c1.06156,0 2.09625,0.01344 3.1175,-0.1075c12.76563,-0.9675 23.94563,-7.76687 30.8525,-17.7375zM86,103.2c9.54063,0 17.2,7.68625 17.2,17.2c0,0.04031 0,0.06719 0,0.1075c-4.46125,4.085 -7.91469,9.68844 -9.46,16.2325c-1.49156,6.32906 -1.11531,12.72531 0.86,18.275c-2.76812,0.3225 -5.63031,0.5375 -8.6,0.5375c-2.98312,0 -5.81844,-0.215 -8.6,-0.5375c1.97531,-5.54969 2.35156,-11.94594 0.86,-18.275c-1.54531,-6.54406 -4.99875,-12.1475 -9.46,-16.2325c0,-0.04031 0,-0.06719 0,-0.1075c0,-9.51375 7.65938,-17.2 17.2,-17.2zM51.815,120.4c3.72219,0.01344 7.43094,1.38406 10.6425,3.7625c0.38969,0.68531 0.99438,1.20938 1.72,1.505c0.01344,0.01344 0.09406,-0.01344 0.1075,0c3.35938,3.1175 5.96625,7.43094 7.2025,12.685c2.92938,12.41625 -3.225,23.98594 -13.0075,26.3375c-9.7825,2.35156 -20.39812,-5.10625 -23.3275,-17.5225c-2.92937,-12.41625 3.225,-23.98594 13.0075,-26.3375c1.22281,-0.29562 2.41875,-0.43 3.655,-0.43zM120.185,120.4c1.22281,0 2.43219,0.13438 3.655,0.43c9.7825,2.35156 15.93688,13.92125 13.0075,26.3375c-2.92937,12.41625 -13.545,19.87406 -23.3275,17.5225c-9.7825,-2.35156 -15.93687,-13.92125 -13.0075,-26.3375c1.34375,-5.67062 4.31344,-10.29312 8.0625,-13.4375c0.1075,-0.06719 0.215,-0.13437 0.3225,-0.215c0.08063,-0.06719 0.13438,-0.14781 0.215,-0.215c2.27094,-1.78719 4.78375,-3.03687 7.4175,-3.655c1.20938,-0.28219 2.43219,-0.43 3.655,-0.43z"
+                          ></path>
+                        </g>
+                      </g>
+                    </svg>
+                  </div>
+                  <div class="flex-grow">
+                    <h2
+                      class="text-gray-900 text-lg title-font font-medium mb-3"
+                    >
+                      Ours en peluche
+                    </h2>
+                    <p class="leading-relaxed text-base">
+                      Parcourez notre collection d'ours en peluche faits à la
+                      main : vous y trouverez les meilleures pièces uniques et
+                      originales, à petits prix
+                    </p>
+                    <a
+                      class="mt-3 text-indigo-500 inline-flex items-center"
+                      href="page-product.html"
+                      >Notre sélection
+                      <svg
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        class="w-4 h-4 ml-2"
+                        viewBox="0 0 24 24"
+                      >
+                        <path d="M5 12h14M12 5l7 7-7 7"></path></svg
+                    ></a>
+                  </div>
+                </div>
+                <div
+                  class="p-4 md:w-1/3 flex flex-col text-center items-center"
+                >
+                  <div
+                    class="
+                      w-20
+                      h-20
+                      inline-flex
+                      items-center
+                      justify-center
+                      rounded-full
+                      bg-indigo-100
+                      text-indigo-500
+                      mb-5
+                      flex-shrink-0
+                    "
+                  >
+                    <i class="fas fa-camera-retro fa-2x"></i>
+                  </div>
+                  <div class="flex-grow">
+                    <h2
+                      class="text-gray-900 text-lg title-font font-medium mb-3"
+                    >
+                      Appareils de photo
+                    </h2>
+                    <p class="leading-relaxed text-base">
+                      Retrouvez notre collection d'appareils photo vintages
+                      entièrement remis à neuf et à moindre coût. Des occasions
+                      rares à découvrir
+                    </p>
+                    <a
+                      class="mt-3 text-indigo-500 inline-flex items-center"
+                      href="/"
+                      >Notre sélection
+                      <svg
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        class="w-4 h-4 ml-2"
+                        viewBox="0 0 24 24"
+                      >
+                        <path d="M5 12h14M12 5l7 7-7 7"></path></svg
+                    ></a>
+                  </div>
+                </div>
+                <div
+                  class="p-4 md:w-1/3 flex flex-col text-center items-center"
+                >
+                  <div
+                    class="
+                      w-20
+                      h-20
+                      inline-flex
+                      items-center
+                      justify-center
+                      rounded-full
+                      bg-indigo-100
+                      text-indigo-500
+                      mb-5
+                      flex-shrink-0
+                    "
+                  >
+                    <i class="fas fa-chair fa-2x"></i>
+                  </div>
+                  <div class="flex-grow">
+                    <h2
+                      class="text-gray-900 text-lg title-font font-medium mb-3"
+                    >
+                      Meubles
+                    </h2>
+                    <p class="leading-relaxed text-base">
+                      Découvrez notre collection de meubles en chêne massif,
+                      authentiques ou contemporains. Un bois de qualité qui
+                      donne du caractère à votre intérieur
+                    </p>
+                    <a
+                      class="mt-3 text-indigo-500 inline-flex items-center"
+                      href="/"
+                      >Notre sélection
+                      <svg
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        class="w-4 h-4 ml-2"
+                        viewBox="0 0 24 24"
+                      >
+                        <path d="M5 12h14M12 5l7 7-7 7"></path></svg
+                    ></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section
+            class="bg-gray-100 w-full h-2/3 overflow-hidden absolute left-0"
+          >
+            <div
+              class="
+                w-full
+                mx-auto
+                flex flex-wrap
+                transform
+                -rotate-35
+                skew-x-2
+                scale-150
+              "
+            >
+              <div class="p-1 mx-6">
+                <div
+                  class="
+                    z-10
+                    flex
+                    p-2
+                    items-center
+                    flex-col
+                    h-44
+                    w-96
+                    rounded-md
+                    shadow-md
+                    my-4
+                    transform
+                    duration-200
+                    move-item
+                  "
+                >
+                  <img
+                    class="rounded-md w-full h-full object-cover"
+                    src="../css/img/vcam_1.jpg"
+                  />
+                </div>
+              </div>
+              <div class="p-1 mx-6">
+                <div
+                  class="
+                    z-20
+                    flex
+                    p-2
+                    items-center
+                    flex-col
+                    h-44
+                    w-96
+                    rounded-md
+                    shadow-md
+                    my-4
+                    transform
+                    duration-200
+                    move-item
+                  "
+                >
+                  <img
+                    class="rounded-md w-full h-full object-cover"
+                    src="../css/img/teddy_3.jpg"
+                  />
+                </div>
+              </div>
+              <div class="p-1 mx-6">
+                <div
+                  class="
+                    z-20
+                    flex
+                    p-2
+                    items-center
+                    flex-col
+                    h-44
+                    w-96
+                    rounded-md
+                    shadow-md
+                    my-4
+                    transform
+                    duration-200
+                    move-item
+                  "
+                >
+                  <img
+                    class="rounded-md w-full h-full object-cover"
+                    src="../css/img/oak_3.jpg"
+                  />
+                </div>
+              </div>
+              <div class="p-1 mx-6">
+                <div
+                  class="
+                    z-20
+                    flex
+                    p-2
+                    items-center
+                    flex-col
+                    h-44
+                    w-96
+                    rounded-md
+                    shadow-md
+                    my-4
+                    transform
+                    duration-200
+                    move-item
+                  "
+                >
+                  <img
+                    class="rounded-md w-full h-full object-cover"
+                    src="../css/img/teddy_4.jpg"
+                  />
+                </div>
+              </div>
+              <div class="p-1 mx-6">
+                <div
+                  class="
+                    z-20
+                    flex
+                    p-2
+                    items-center
+                    flex-col
+                    h-44
+                    w-96
+                    rounded-md
+                    shadow-md
+                    my-4
+                    transform
+                    duration-200
+                    move-item
+                  "
+                >
+                  <img
+                    class="rounded-md w-full h-full object-cover"
+                    src="../css/img/vcam_5.jpg"
+                  />
+                </div>
+              </div>
+              <div class="p-1 mx-6">
+                <div
+                  class="
+                    z-20
+                    flex
+                    p-2
+                    items-center
+                    flex-col
+                    h-44
+                    w-96
+                    rounded-md
+                    shadow-md
+                    my-4
+                    transform
+                    duration-200
+                    move-item
+                  "
+                >
+                  <img
+                    class="rounded-md w-full h-full object-cover"
+                    src="../css/img/oak_5.jpg"
+                  />
+                </div>
+              </div>
+              <div class="p-1 mx-6">
+                <div
+                  class="
+                    z-20
+                    flex
+                    p-2
+                    items-center
+                    flex-col
+                    h-44
+                    w-96
+                    rounded-md
+                    shadow-md
+                    my-4
+                    transform
+                    duration-200
+                    move-item
+                  "
+                >
+                  <img
+                    class="rounded-md w-full h-full object-cover"
+                    src="../css/img/vcam_2.jpg"
+                  />
+                </div>
+              </div>
+              <div class="p-1 mx-6">
+                <div
+                  class="
+                    z-20
+                    flex
+                    p-2
+                    items-center
+                    flex-col
+                    h-44
+                    w-96
+                    rounded-md
+                    shadow-md
+                    my-4
+                    transform
+                    duration-200
+                    move-item
+                  "
+                >
+                  <img
+                    class="rounded-md w-full h-full object-cover"
+                    src="../css/img/teddy_5.jpg"
+                  />
+                </div>
+              </div>
+              <div class="p-1 mx-6">
+                <div
+                  class="
+                    z-20
+                    flex
+                    p-2
+                    items-center
+                    flex-col
+                    h-44
+                    w-96
+                    rounded-md
+                    shadow-md
+                    my-4
+                    transform
+                    duration-200
+                    move-item
+                  "
+                >
+                  <img
+                    class="rounded-md w-full h-full object-cover"
+                    src="../css/img/vcam_4.jpg"
+                  />
+                </div>
+              </div>
+              <div class="p-1 mx-6">
+                <div
+                  class="
+                    z-20
+                    flex
+                    p-2
+                    items-center
+                    flex-col
+                    h-44
+                    w-96
+                    rounded-md
+                    shadow-md
+                    my-4
+                    transform
+                    duration-200
+                    move-item
+                  "
+                >
+                  <img
+                    class="rounded-md w-full h-full object-cover"
+                    src="../css/img/teddy_2.jpg"
+                  />
+                </div>
+              </div>
+              <div class="p-1 mx-6">
+                <div
+                  class="
+                    z-20
+                    flex
+                    p-2
+                    items-center
+                    flex-col
+                    h-44
+                    w-96
+                    rounded-md
+                    shadow-md
+                    my-4
+                    transform
+                    duration-200
+                    move-item
+                  "
+                >
+                  <img
+                    class="rounded-md w-full h-full object-cover"
+                    src="../css/img/vcam_3.jpg"
+                  />
+                </div>
+              </div>
+              <div class="p-1 mx-6">
+                <div
+                  class="
+                    z-20
+                    flex
+                    p-2
+                    items-center
+                    flex-col
+                    h-44
+                    w-96
+                    rounded-md
+                    shadow-md
+                    my-4
+                    transform
+                    duration-200
+                    move-item
+                  "
+                >
+                  <img
+                    class="rounded-md w-full h-full object-cover"
+                    src="../css/img/oak_3.jpg"
+                  />
+                </div>
+              </div>
+              <div class="p-1 mx-6">
+                <div
+                  class="
+                    z-20
+                    flex
+                    p-2
+                    items-center
+                    flex-col
+                    h-44
+                    w-96
+                    rounded-md
+                    shadow-md
+                    my-4
+                    transform
+                    duration-200
+                    move-item
+                  "
+                >
+                  <img
+                    class="rounded-md w-full h-full object-cover"
+                    src="../css/img/teddy_3.jpg"
+                  />
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
