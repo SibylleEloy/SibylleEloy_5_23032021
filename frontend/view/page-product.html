@@ -12,9 +12,8 @@
       href="../css/fontawesome-free-5.15.3-web/css/all.css"
       rel="stylesheet"
     />
-    <title>Onorico - Ours en peluche</title>
+    <title>Orinoco - Ours en peluche</title>
   </head>
-
   <body>
     <header
       role="banner"
@@ -29,721 +28,460 @@
         </ul>
       </nav>
     </header>
-    <div
-      class="flex flex-col w-screen min-h-screen p-10 bg-gray-100 text-gray-800"
-    >
-      <!-- Component Start -->
-      <h1 class="text-3xl">
-        Notre sélection d'Ours en peluche faits à la main
-      </h1>
-      <div
-        class="flex flex-col sm:flex-row sm:items-end sm:justify-between mt-6"
-      >
-        <span class="text-sm font-semibold">1-16 of 148 Produits</span>
-        <button class="relative text-sm focus:outline-none group mt-4 sm:mt-0">
-          <div
-            class="
-              flex
-              items-center
-              justify-between
-              w-40
-              h-10
-              px-3
-              border-2 border-gray-300
-              rounded
-              hover:bg-gray-300
-            "
-          >
-            <span class="font-medium"> Populaire </span>
-            <svg
-              class="w-4 h-4"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                clip-rule="evenodd"
-              />
-            </svg>
-          </div>
-          <div
-            class="
-              absolute
-              z-10
-              flex-col
-              items-start
-              hidden
-              w-full
-              pb-1
-              bg-white
-              shadow-lg
-              rounded
-              group-focus:flex
-            "
-          >
-            <a class="w-full px-4 py-2 text-left hover:bg-gray-200" href="#"
-              >Popular</a
-            >
-            <a class="w-full px-4 py-2 text-left hover:bg-gray-200" href="#"
-              >Featured</a
-            >
-            <a class="w-full px-4 py-2 text-left hover:bg-gray-200" href="#"
-              >Newest</a
-            >
-            <a class="w-full px-4 py-2 text-left hover:bg-gray-200" href="#"
-              >Lowest Price</a
-            >
-            <a class="w-full px-4 py-2 text-left hover:bg-gray-200" href="#"
-              >Highest Price</a
-            >
-          </div>
-        </button>
-      </div>
-      <div
-        class="
-          grid
-          2xl:grid-cols-5
-          xl:grid-cols-4
-          lg:grid-cols-3
-          sm:grid-cols-2
-          grid-cols-1
-          gap-x-6 gap-y-12
-          w-full
-          mt-6
-        "
-      >
-        <!-- Product Tile Start -->
-        <div>
+    <div class="container mx-auto my-8 px-6 py-8">
+      <div class="md:flex md:items-center">
+        <div class="w-full h-64 md:w-1/2 lg:h-96">
           <img
+            class="h-full w-full rounded-md object-cover max-w-lg mx-auto"
             src="../css/img/teddy_1.jpg"
-            alt="Teddy bear 1"
-            class="rounded-lg shadow-lg"
+            alt="Ours en peluche 1"
           />
-          <div class="flex items-center justify-between mt-3">
-            <div>
-              <a href="#" class="font-medium">Ours en peluche 1</a>
-              <a class="flex items-center" href="#">
-                <span class="text-xs font-medium text-gray-600"
-                  ><i class="fas fa-shopping-cart"></i
-                ></span>
-                <span class="text-xs font-medium ml-1 text-indigo-500"
-                  >Description</span
+        </div>
+        <div class="w-full max-w-lg mx-auto mt-5 md:ml-8 md:mt-0 md:w-1/2">
+          <h3 class="text-gray-700 uppercase text-lg">Ours en peluche 1</h3>
+          <span class="text-gray-500 mt-3">Prix</span>
+          <hr class="my-3" />
+          <div class="mt-2">
+            <label class="text-gray-700 text-sm" for="count">Count:</label>
+            <div class="flex items-center mt-1">
+              <button
+                class="text-gray-500 focus:outline-none focus:text-gray-600"
+              >
+                <svg
+                  class="h-5 w-5"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
                 >
-              </a>
+                  <path
+                    d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
+                  ></path>
+                </svg>
+              </button>
+              <span class="text-gray-700 text-lg mx-2">20</span>
+              <button
+                class="text-gray-500 focus:outline-none focus:text-gray-600"
+              >
+                <svg
+                  class="h-5 w-5"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+              </button>
             </div>
-            <span
+          </div>
+          <div class="mt-3">
+            <label class="text-gray-700 text-sm" for="count">Color:</label>
+            <div class="flex items-center mt-1">
+              <div class="flex items-center justify-center">
+                <div class="relative inline-block text-left dropdown">
+                  <span class="rounded-md shadow-sm"
+                    ><button
+                      class="
+                        inline-flex
+                        justify-center
+                        w-full
+                        px-4
+                        py-2
+                        text-sm
+                        font-medium
+                        leading-5
+                        text-gray-700
+                        transition
+                        duration-150
+                        ease-in-out
+                        bg-white
+                        border border-gray-300
+                        rounded-md
+                        hover:text-gray-500
+                        focus:outline-none
+                        focus:border-blue-300
+                        focus:shadow-outline-blue
+                        active:bg-gray-50 active:text-gray-800
+                      "
+                      type="button"
+                      aria-haspopup="true"
+                      aria-expanded="true"
+                      aria-controls="headlessui-menu-items-117"
+                    >
+                      <span>Options</span>
+                      <svg
+                        class="w-5 h-5 ml-2 -mr-1"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg></button
+                  ></span>
+                  <div
+                    class="
+                      opacity-0
+                      invisible
+                      dropdown-menu
+                      transition-all
+                      duration-300
+                      transform
+                      origin-top-right
+                      -translate-y-2
+                      scale-95
+                    "
+                  >
+                    <div
+                      class="
+                        absolute
+                        left-30
+                        w-56
+                        mt-2
+                        origin-top-right
+                        bg-white
+                        border border-gray-200
+                        divide-y divide-gray-100
+                        rounded-md
+                        shadow-lg
+                        outline-none
+                      "
+                      aria-labelledby="headlessui-menu-button-1"
+                      id="headlessui-menu-items-117"
+                      role="menu"
+                    >
+                      <div class="py-1">
+                        <a
+                          href="javascript:void(0)"
+                          tabindex="0"
+                          class="
+                            text-gray-700
+                            flex
+                            justify-between
+                            w-full
+                            px-4
+                            py-2
+                            text-sm
+                            leading-5
+                            text-left
+                          "
+                          role="menuitem"
+                          >Choisir la couleur</a
+                        >
+                        <a
+                          href="javascript:void(0)"
+                          tabindex="1"
+                          class="
+                            text-gray-700
+                            flex
+                            justify-between
+                            w-full
+                            px-4
+                            py-2
+                            text-sm
+                            leading-5
+                            text-left
+                          "
+                          role="menuitem"
+                          >Choisir la taille</a
+                        >
+                        <span
+                          role="menuitem"
+                          tabindex="-1"
+                          class="
+                            flex
+                            justify-between
+                            w-full
+                            px-4
+                            py-2
+                            text-sm
+                            leading-5
+                            text-left text-gray-700
+                            cursor-not-allowed
+                            opacity-50
+                          "
+                          aria-disabled="true"
+                          >Choisir des habits (à venir)</span
+                        >
+                        <a
+                          href="javascript:void(0)"
+                          tabindex="2"
+                          class="
+                            text-gray-700
+                            flex
+                            justify-between
+                            w-full
+                            px-4
+                            py-2
+                            text-sm
+                            leading-5
+                            text-left
+                          "
+                          role="menuitem"
+                          >Idées de personnalisation</a
+                        >
+                      </div>
+                      <div class="py-1">
+                        <a
+                          href="javascript:void(0)"
+                          tabindex="3"
+                          class="
+                            text-gray-700
+                            flex
+                            justify-between
+                            w-full
+                            px-4
+                            py-2
+                            text-sm
+                            leading-5
+                            text-left
+                          "
+                          role="menuitem"
+                          >Aide</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <style>
+                .dropdown:focus-within .dropdown-menu {
+                  opacity: 1;
+                  transform: translate(0) scale(1);
+                  visibility: visible;
+                }
+              </style>
+            </div>
+          </div>
+          <div class="flex items-center mt-6">
+            <button
               class="
-                flex
-                items-center
-                h-8
-                bg-indigo-200
-                text-indigo-600 text-sm
-                px-2
+                px-8
+                py-2
+                bg-indigo-500
+                text-white text-sm
+                font-medium
                 rounded
+                hover:bg-indigo-500
+                focus:outline-none focus:bg-indigo-500
               "
-              >Prix</span
             >
+              Order Now
+            </button>
+            <button
+              class="
+                mx-2
+                text-gray-600
+                border
+                rounded-md
+                p-2
+                hover:bg-gray-200
+                focus:outline-none
+              "
+            >
+              <svg
+                class="h-5 w-5"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                ></path>
+              </svg>
+            </button>
           </div>
         </div>
-        <!-- Product Tile End -->
-        <!-- Product Tile Start -->
-        <div>
-          <img
-            src="../css/img/teddy_2.jpg"
-            alt="Teddy bear 2"
-            class="rounded-lg shadow-lg"
-          />
-          <div class="flex items-center justify-between mt-3">
-            <div>
-              <a href="#" class="font-medium">Ours en peluche</a>
-              <a class="flex items-center" href="#">
-                <span class="text-xs font-medium text-gray-600"
-                  ><i class="fas fa-shopping-cart"></i
-                ></span>
-                <span class="text-xs font-medium ml-1 text-indigo-500"
-                  >Description</span
-                >
-              </a>
-            </div>
-            <span
-              class="
-                flex
-                items-center
-                h-8
-                bg-indigo-200
-                text-indigo-600 text-sm
-                px-2
-                rounded
-              "
-              >Prix</span
-            >
-          </div>
-        </div>
-        <!-- Product Tile End -->
-        <!-- Product Tile Start -->
-        <div>
-          <img
-            src="../css/img/teddy_3.jpg"
-            alt="Teddy bear 3"
-            class="block h-64 rounded-lg shadow-lg"
-          />
-          <div class="flex items-center justify-between mt-3">
-            <div>
-              <a href="#" class="font-medium">Ours en peluche</a>
-              <a class="flex items-center" href="#">
-                <span class="text-xs font-medium text-gray-600"
-                  ><i class="fas fa-shopping-cart"></i
-                ></span>
-                <span class="text-xs font-medium ml-1 text-indigo-500"
-                  >Description</span
-                >
-              </a>
-            </div>
-            <span
-              class="
-                flex
-                items-center
-                h-8
-                bg-indigo-200
-                text-indigo-600 text-sm
-                px-2
-                rounded
-              "
-              >Prix</span
-            >
-          </div>
-        </div>
-        <!-- Product Tile End -->
-        <!-- Product Tile Start -->
-        <div>
-          <img
-            src="../css/img/teddy_4.jpg"
-            alt="Teddy bear 4"
-            class="rounded-lg shadow-lg"
-          />
-          <div class="flex items-center justify-between mt-3">
-            <div>
-              <a href="#" class="font-medium">Ours en peluche</a>
-              <a class="flex items-center" href="#">
-                <span class="text-xs font-medium text-gray-600"
-                  ><i class="fas fa-shopping-cart"></i
-                ></span>
-                <span class="text-xs font-medium ml-1 text-indigo-500"
-                  >Description</span
-                >
-              </a>
-            </div>
-            <span
-              class="
-                flex
-                items-center
-                h-8
-                bg-indigo-200
-                text-indigo-600 text-sm
-                px-2
-                rounded
-              "
-              >Prix</span
-            >
-          </div>
-        </div>
-        <!-- Product Tile End -->
-        <!-- Product Tile Start -->
-        <div>
-          <img
-            src="../css/img/teddy_5.jpg"
-            alt="Teddy bear 5"
-            class="rounded-lg shadow-lg"
-          />
-          <div class="flex items-center justify-between mt-3">
-            <div>
-              <a href="#" class="font-medium">Ours en peluche</a>
-              <a class="flex items-center" href="#">
-                <span class="text-xs font-medium text-gray-600"
-                  ><i class="fas fa-shopping-cart"></i
-                ></span>
-                <span class="text-xs font-medium ml-1 text-indigo-500"
-                  >Description</span
-                >
-              </a>
-            </div>
-            <span
-              class="
-                flex
-                items-center
-                h-8
-                bg-indigo-200
-                text-indigo-600 text-sm
-                px-2
-                rounded
-              "
-              >Prix</span
-            >
-          </div>
-        </div>
-        <!-- Product Tile End -->
-        <!-- Product Tile Start -->
-        <div>
-          <a href="#" class="block h-64 rounded-lg shadow-lg bg-white"></a>
-          <div class="flex items-center justify-between mt-3">
-            <div>
-              <a href="#" class="font-medium">Ours en peluche</a>
-              <a class="flex items-center" href="#">
-                <span class="text-xs font-medium text-gray-600"
-                  ><i class="fas fa-shopping-cart"></i
-                ></span>
-                <span class="text-xs font-medium ml-1 text-indigo-500"
-                  >Description</span
-                >
-              </a>
-            </div>
-            <span
-              class="
-                flex
-                items-center
-                h-8
-                bg-indigo-200
-                text-indigo-600 text-sm
-                px-2
-                rounded
-              "
-              >Prix</span
-            >
-          </div>
-        </div>
-        <!-- Product Tile End -->
-        <!-- Product Tile Start -->
-        <div>
-          <a href="#" class="block h-64 rounded-lg shadow-lg bg-white"></a>
-          <div class="flex items-center justify-between mt-3">
-            <div>
-              <a href="#" class="font-medium">Ours en peluche</a>
-              <a class="flex items-center" href="#">
-                <span class="text-xs font-medium text-gray-600"
-                  ><i class="fas fa-shopping-cart"></i
-                ></span>
-                <span class="text-xs font-medium ml-1 text-indigo-500"
-                  >Description</span
-                >
-              </a>
-            </div>
-            <span
-              class="
-                flex
-                items-center
-                h-8
-                bg-indigo-200
-                text-indigo-600 text-sm
-                px-2
-                rounded
-              "
-              >Prix</span
-            >
-          </div>
-        </div>
-        <!-- Product Tile End -->
-        <!-- Product Tile Start -->
-        <div>
-          <a href="#" class="block h-64 rounded-lg shadow-lg bg-white"></a>
-          <div class="flex items-center justify-between mt-3">
-            <div>
-              <a href="#" class="font-medium">Ours en peluche</a>
-              <a class="flex items-center" href="#">
-                <span class="text-xs font-medium text-gray-600"
-                  ><i class="fas fa-shopping-cart"></i
-                ></span>
-                <span class="text-xs font-medium ml-1 text-indigo-500"
-                  >Description</span
-                >
-              </a>
-            </div>
-            <span
-              class="
-                flex
-                items-center
-                h-8
-                bg-indigo-200
-                text-indigo-600 text-sm
-                px-2
-                rounded
-              "
-              >Prix</span
-            >
-          </div>
-        </div>
-        <!-- Product Tile End -->
-        <!-- Product Tile Start -->
-        <div>
-          <a href="#" class="block h-64 rounded-lg shadow-lg bg-white"></a>
-          <div class="flex items-center justify-between mt-3">
-            <div>
-              <a href="#" class="font-medium">Ours en peluche</a>
-              <a class="flex items-center" href="#">
-                <span class="text-xs font-medium text-gray-600"
-                  ><i class="fas fa-shopping-cart"></i
-                ></span>
-                <span class="text-xs font-medium ml-1 text-indigo-500"
-                  >Description</span
-                >
-              </a>
-            </div>
-            <span
-              class="
-                flex
-                items-center
-                h-8
-                bg-indigo-200
-                text-indigo-600 text-sm
-                px-2
-                rounded
-              "
-              >Prix</span
-            >
-          </div>
-        </div>
-        <!-- Product Tile End -->
-        <!-- Product Tile Start -->
-        <div>
-          <a href="#" class="block h-64 rounded-lg shadow-lg bg-white"></a>
-          <div class="flex items-center justify-between mt-3">
-            <div>
-              <a href="#" class="font-medium">Ours en peluche</a>
-              <a class="flex items-center" href="#">
-                <span class="text-xs font-medium text-gray-600"
-                  ><i class="fas fa-shopping-cart"></i
-                ></span>
-                <span class="text-xs font-medium ml-1 text-indigo-500"
-                  >Description</span
-                >
-              </a>
-            </div>
-            <span
-              class="
-                flex
-                items-center
-                h-8
-                bg-indigo-200
-                text-indigo-600 text-sm
-                px-2
-                rounded
-              "
-              >Prix</span
-            >
-          </div>
-        </div>
-        <!-- Product Tile End -->
-        <!-- Product Tile Start -->
-        <div>
-          <a href="#" class="block h-64 rounded-lg shadow-lg bg-white"></a>
-          <div class="flex items-center justify-between mt-3">
-            <div>
-              <a href="#" class="font-medium">Ours en peluche</a>
-              <a class="flex items-center" href="#">
-                <span class="text-xs font-medium text-gray-600"
-                  ><i class="fas fa-shopping-cart"></i
-                ></span>
-                <span class="text-xs font-medium ml-1 text-indigo-500"
-                  >Description</span
-                >
-              </a>
-            </div>
-            <span
-              class="
-                flex
-                items-center
-                h-8
-                bg-indigo-200
-                text-indigo-600 text-sm
-                px-2
-                rounded
-              "
-              >Prix</span
-            >
-          </div>
-        </div>
-        <!-- Product Tile End -->
-        <!-- Product Tile Start -->
-        <div>
-          <a href="#" class="block h-64 rounded-lg shadow-lg bg-white"></a>
-          <div class="flex items-center justify-between mt-3">
-            <div>
-              <a href="#" class="font-medium">Ours en peluche</a>
-              <a class="flex items-center" href="#">
-                <span class="text-xs font-medium text-gray-600"
-                  ><i class="fas fa-shopping-cart"></i
-                ></span>
-                <span class="text-xs font-medium ml-1 text-indigo-500"
-                  >Description</span
-                >
-              </a>
-            </div>
-            <span
-              class="
-                flex
-                items-center
-                h-8
-                bg-indigo-200
-                text-indigo-600 text-sm
-                px-2
-                rounded
-              "
-              >Prix</span
-            >
-          </div>
-        </div>
-        <!-- Product Tile End -->
-        <!-- Product Tile Start -->
-        <div>
-          <a href="#" class="block h-64 rounded-lg shadow-lg bg-white"></a>
-          <div class="flex items-center justify-between mt-3">
-            <div>
-              <a href="#" class="font-medium">Ours en peluche</a>
-              <a class="flex items-center" href="#">
-                <span class="text-xs font-medium text-gray-600"
-                  ><i class="fas fa-shopping-cart"></i
-                ></span>
-                <span class="text-xs font-medium ml-1 text-indigo-500"
-                  >Description</span
-                >
-              </a>
-            </div>
-            <span
-              class="
-                flex
-                items-center
-                h-8
-                bg-indigo-200
-                text-indigo-600 text-sm
-                px-2
-                rounded
-              "
-              >Prix</span
-            >
-          </div>
-        </div>
-        <!-- Product Tile End -->
-        <!-- Product Tile Start -->
-        <div>
-          <a href="#" class="block h-64 rounded-lg shadow-lg bg-white"></a>
-          <div class="flex items-center justify-between mt-3">
-            <div>
-              <a href="#" class="font-medium">Ours en peluche</a>
-              <a class="flex items-center" href="#">
-                <span class="text-xs font-medium text-gray-600"
-                  ><i class="fas fa-shopping-cart"></i
-                ></span>
-                <span class="text-xs font-medium ml-1 text-indigo-500"
-                  >Description</span
-                >
-              </a>
-            </div>
-            <span
-              class="
-                flex
-                items-center
-                h-8
-                bg-indigo-200
-                text-indigo-600 text-sm
-                px-2
-                rounded
-              "
-              >Prix</span
-            >
-          </div>
-        </div>
-        <!-- Product Tile End -->
-        <!-- Product Tile Start -->
-        <div>
-          <a href="#" class="block h-64 rounded-lg shadow-lg bg-white"></a>
-          <div class="flex items-center justify-between mt-3">
-            <div>
-              <a href="#" class="font-medium">Ours en peluche</a>
-              <a class="flex items-center" href="#">
-                <span class="text-xs font-medium text-gray-600"
-                  ><i class="fas fa-shopping-cart"></i
-                ></span>
-                <span class="text-xs font-medium ml-1 text-indigo-500"
-                  >Description</span
-                >
-              </a>
-            </div>
-            <span
-              class="
-                flex
-                items-center
-                h-8
-                bg-indigo-200
-                text-indigo-600 text-sm
-                px-2
-                rounded
-              "
-              >Prix</span
-            >
-          </div>
-        </div>
-        <!-- Product Tile End -->
-        <!-- Product Tile Start -->
-        <div>
-          <a href="#" class="block h-64 rounded-lg shadow-lg bg-white"></a>
-          <div class="flex items-center justify-between mt-3">
-            <div>
-              <a href="#" class="font-medium">Ours en peluche</a>
-              <a class="flex items-center" href="#">
-                <span class="text-xs font-medium text-gray-600"
-                  ><i class="fas fa-shopping-cart"></i
-                ></span>
-                <span class="text-xs font-medium ml-1 text-indigo-500"
-                  >Description</span
-                >
-              </a>
-            </div>
-            <span
-              class="
-                flex
-                items-center
-                h-8
-                bg-indigo-200
-                text-indigo-600 text-sm
-                px-2
-                rounded
-              "
-              >Prix</span
-            >
-          </div>
-        </div>
-        <!-- Product Tile End -->
       </div>
-      <div class="flex justify-center mt-10 space-x-1">
-        <button
-          class="flex items-center justify-center h-8 w-8 rounded text-gray-400"
+      <div class="mt-16">
+        <h3 class="text-gray-600 text-2xl font-medium">More Products</h3>
+        <div
+          class="
+            grid
+            gap-6
+            grid-cols-1
+            sm:grid-cols-2
+            lg:grid-cols-3
+            xl:grid-cols-4
+            mt-6
+          "
         >
-          <svg
-            class="h-5 w-5"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-            fill="currentColor"
+          <div
+            class="w-full max-w-sm mx-auto rounded-md shadow-md overflow-hidden"
           >
-            <path
-              fill-rule="evenodd"
-              d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
-              clip-rule="evenodd"
-            />
-          </svg>
-        </button>
-        <button
-          class="
-            flex
-            items-center
-            justify-center
-            h-8
-            px-2
-            rounded
-            text-sm
-            font-medium
-            text-gray-400
-          "
-          disabled
-        >
-          Prev
-        </button>
-        <button
-          class="
-            flex
-            items-center
-            justify-center
-            h-8
-            w-8
-            rounded
-            bg-indigo-200
-            text-sm
-            font-medium
-            text-indigo-600
-          "
-          disabled
-        >
-          1
-        </button>
-        <button
-          class="
-            flex
-            items-center
-            justify-center
-            h-8
-            w-8
-            rounded
-            hover:bg-indigo-200
-            text-sm
-            font-medium
-            text-gray-600
-            hover:text-indigo-600
-          "
-        >
-          2
-        </button>
-        <button
-          class="
-            flex
-            items-center
-            justify-center
-            h-8
-            w-8
-            rounded
-            hover:bg-indigo-200
-            text-sm
-            font-medium
-            text-gray-600
-            hover:text-indigo-600
-          "
-        >
-          3
-        </button>
-        <button
-          class="
-            flex
-            items-center
-            justify-center
-            h-8
-            px-2
-            rounded
-            hover:bg-indigo-200
-            text-sm
-            font-medium
-            text-gray-600
-            hover:text-indigo-600
-          "
-        >
-          Next
-        </button>
-        <button
-          class="
-            flex
-            items-center
-            justify-center
-            h-8
-            w-8
-            rounded
-            hover:bg-indigo-200
-            text-gray-600
-            hover:text-indigo-600
-          "
-        >
-          <svg
-            class="h-5 w-5"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-            fill="currentColor"
+            <div
+              class="flex items-end justify-end h-56 w-full bg-cover"
+              style="
+                background-image: url('https://images.unsplash.com/photo-1563170351-be82bc888aa4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=376&q=80');
+              "
+            >
+              <button
+                class="
+                  p-2
+                  rounded-full
+                  bg-blue-600
+                  text-white
+                  mx-5
+                  -mb-4
+                  hover:bg-blue-500
+                  focus:outline-none focus:bg-blue-500
+                "
+              >
+                <svg
+                  class="h-5 w-5"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+            <div class="px-5 py-3">
+              <h3 class="text-gray-700 uppercase">Chanel</h3>
+              <span class="text-gray-500 mt-2">$12</span>
+            </div>
+          </div>
+          <div
+            class="w-full max-w-sm mx-auto rounded-md shadow-md overflow-hidden"
           >
-            <path
-              fill-rule="evenodd"
-              d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-              clip-rule="evenodd"
-            />
-          </svg>
-        </button>
+            <div
+              class="flex items-end justify-end h-56 w-full bg-cover"
+              style="
+                background-image: url('https://images.unsplash.com/photo-1544441893-675973e31985?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80');
+              "
+            >
+              <button
+                class="
+                  p-2
+                  rounded-full
+                  bg-blue-600
+                  text-white
+                  mx-5
+                  -mb-4
+                  hover:bg-blue-500
+                  focus:outline-none focus:bg-blue-500
+                "
+              >
+                <svg
+                  class="h-5 w-5"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+            <div class="px-5 py-3">
+              <h3 class="text-gray-700 uppercase">Man Mix</h3>
+              <span class="text-gray-500 mt-2">$12</span>
+            </div>
+          </div>
+          <div
+            class="w-full max-w-sm mx-auto rounded-md shadow-md overflow-hidden"
+          >
+            <div
+              class="flex items-end justify-end h-56 w-full bg-cover"
+              style="
+                background-image: url('https://images.unsplash.com/photo-1532667449560-72a95c8d381b?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80');
+              "
+            >
+              <button
+                class="
+                  p-2
+                  rounded-full
+                  bg-blue-600
+                  text-white
+                  mx-5
+                  -mb-4
+                  hover:bg-blue-500
+                  focus:outline-none focus:bg-blue-500
+                "
+              >
+                <svg
+                  class="h-5 w-5"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+            <div class="px-5 py-3">
+              <h3 class="text-gray-700 uppercase">Classic watch</h3>
+              <span class="text-gray-500 mt-2">$12</span>
+            </div>
+          </div>
+          <div
+            class="w-full max-w-sm mx-auto rounded-md shadow-md overflow-hidden"
+          >
+            <div
+              class="flex items-end justify-end h-56 w-full bg-cover"
+              style="
+                background-image: url('https://images.unsplash.com/photo-1590664863685-a99ef05e9f61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=345&q=80');
+              "
+            >
+              <button
+                class="
+                  p-2
+                  rounded-full
+                  bg-blue-600
+                  text-white
+                  mx-5
+                  -mb-4
+                  hover:bg-blue-500
+                  focus:outline-none focus:bg-blue-500
+                "
+              >
+                <svg
+                  class="h-5 w-5"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+            <div class="px-5 py-3">
+              <h3 class="text-gray-700 uppercase">woman mix</h3>
+              <span class="text-gray-500 mt-2">$12</span>
+            </div>
+          </div>
+        </div>
       </div>
-      <!-- Component End  -->
     </div>
   </body>
 </html>
