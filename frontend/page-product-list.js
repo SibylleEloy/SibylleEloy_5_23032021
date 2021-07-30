@@ -27,46 +27,40 @@
 // }
 // ---------------
 
-// add the teddies to the page
+// déclaration des variables
+let _id = [];
+
+// afficher les produits sur la page
 fetch("http://localhost:3000/api/teddies")
   .then((response) => response.json())
   .then((data) => putTeddiesOnPage(data));
 
 function putTeddiesOnPage(data) {
+  // sélection élement du DOM
   const teddyCollectionDiv = document.getElementById("teddiesCollection");
-
+  // boucle pour afficher les objets sur la page
   data.forEach(function (teddy) {
     teddyCollectionDiv.innerHTML += `
-
-		<div class="teddyCard" id="${teddy._id}">
-            <img style="width: 100%" src="${teddy.imageUrl}" alt="Teddy Bear" class="block h-60 rounded-lg shadow-lg" />
-            <div class="flex items-center justify-between mt-3">
-            <div>
-                <div class="font-medium">${teddy.name}</div>
-                <span class="text-xs font-medium text-gray-600"
-                  ><i class="fas fa-shopping-cart"></i></span>
-                <span class="text-xs font-medium ml-1 text-indigo-500"
-                  >${teddy.description}</span>
+        <a href="page-product.html?id=${teddy._id}">
+            <div class="teddyCard" id="${teddy._id}">
+                <img style="width: 100%" src="${teddy.imageUrl}" alt="Teddy Bear" class="block h-60 rounded-lg shadow-lg" />
+                <div class="flex items-center justify-between mt-3">
+                <div>
+                    <div class="font-medium">${teddy.name}</div>
+                    <span class="text-xs font-medium text-gray-600"
+                    ><i class="fas fa-shopping-cart"></i></span>
+                    <span class="text-xs font-medium ml-1 text-indigo-500"
+                    >${teddy.description}</span>
+                </div>
             </div>
-        </div>
-        <button class="bg-white
-              hover:bg-gray-100
-              text-gray-600
-              font-semibold
-              py-2
-              px-4
-              my-4
-              border border-gray-400
-              rounded
-              shadow
-            ">Voir plus</button>
-			</div>
-		`;
+        </a>
+            `;
+    console.log(teddy._id);
   });
 }
 
-const teddyCard = document.getElementById("5be9c8541c9d440000665243");
-console.log(teddyCard);
+// const teddyCard = document.getElementById("5be9c8541c9d440000665243");
+// console.log(teddyCard);
 
 // .addEventListener('click', function() {
 //     console.log(data-id);
