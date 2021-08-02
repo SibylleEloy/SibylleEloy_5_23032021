@@ -132,7 +132,7 @@
                 focus:bg-gray-200 focus:outline-none focus:shadow-outline
               "
               href="#"
-              >Contact</a
+              >Cart</a
             >
             <div
               @click.away="open = false"
@@ -300,33 +300,23 @@
         </div>
       </div>
     </header>
-    <div
-      class="flex flex-col w-screen min-h-screen p-10 bg-gray-100 text-gray-800"
-    >
-      <!-- Component Start -->
+    <div class="flex flex-row p-10 bg-gray-100 text-gray-800">
+      <!-- Title -->
       <h1 class="text-2xl">
         Notre sélection d'ours en peluche faits à la main
       </h1>
-      <div
-        class="
-          grid
-          gap-6
-          grid-cols-1
-          sm:grid-cols-2
-          lg:grid-cols-3
-          xl:grid-cols-4
-          mt-6
-        "
-      >
-        <div
-          class="flex flex-row sm:flex-row sm:items-end sm:justify-between mt-6"
-        >
+      <!-- Container -->
+      <div class="container my-12 mx-auto px-4 md:px-12">
+        <div class="flex flex-wrap -mx-1 lg:-mx-4">
           <!-- Product Start -->
-          <div id="teddiesCollection"></div>
-          <!-- Product End -->
+          <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
+            <div id="teddiesCollection" class="my-4"></div>
+            <!-- Product End -->
+          </div>
         </div>
       </div>
     </div>
+
     <!-- javaScript Code -->
     <script src="page-product-list.js"></script>
   </body>

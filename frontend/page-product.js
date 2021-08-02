@@ -9,10 +9,6 @@ console.log(pageId);
 
 // afficher le produit de l'objet correspondant à l'id récupéré
 
-// fetch("http://localhost:3000/api/teddies")
-//   .then((response) => response.json())
-//   .then((data) => putTeddyOnPage(data));
-
 fetch(`http://localhost:3000/api/teddies/${pageId}`)
   .then((response) => response.json())
   .then((data) => putTeddyOnPage(data));
