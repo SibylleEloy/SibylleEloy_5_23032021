@@ -1,4 +1,4 @@
-// recupérer la châine de requête dans l'url
+// recupérer la chaîne de requête dans l'url
 
 const queryStringUrlId = window.location.search;
 console.log(queryStringUrlId);
