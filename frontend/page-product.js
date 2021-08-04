@@ -1,5 +1,4 @@
 // recupérer la chaîne de requête dans l'url
-
 const queryStringUrlId = window.location.search;
 console.log(queryStringUrlId);
 
@@ -21,7 +20,7 @@ function putTeddyOnPage(data) {
   console.log(teddyImage);
 
   teddyDetails.innerHTML += `
-    <h3 class="text-gray-700 uppercase text-lg">${data.name}</h3>
+    <h3 id="teddyName" class="text-gray-700 uppercase text-lg">${data.name}</h3>
     <span class="text-gray-500 mt-3">${data.price}€</span>`;
   teddyImage.innerHTML += `
     <img class="h-full w-full rounded-md object-cover max-w-lg mx-auto"
