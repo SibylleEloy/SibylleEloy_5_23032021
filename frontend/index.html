@@ -320,6 +320,7 @@
               <div class="flex justify-center">
                 <div class="relative">
                   <button
+                    onclick="cartOpen()"
                     @click="open = !open"
                     id="buttonCart"
                     class="
@@ -374,10 +375,13 @@
                   </button>
                   <div
                     x-show="open"
-                    id="dropdownCart"
                     class="absolute w-full rounded-b border-t-0 z-10"
                   >
-                    <div x-show="open" class="shadow-xl w-64">
+                    <div
+                      id="dropdownCart"
+                      x-show="open"
+                      class="shadow-xl w-64 transform -translate-x-40 z-10"
+                    >
                       <div
                         class="
                           p-2
@@ -549,7 +553,7 @@
                           $12.22
                         </div>
                       </div>
-                      <div class="p-4 justify-center flex">
+                      <div class="bg-white p-4 justify-center flex">
                         <button
                           class="
                             text-base
