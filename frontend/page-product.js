@@ -21,7 +21,7 @@ function putTeddyOnPage(data) {
 
   teddyDetails.innerHTML += `
     <h3 id="teddyName" class="text-gray-700 uppercase text-lg">${data.name}</h3>
-    <span class="text-gray-500 mt-3">${data.price}€</span>`;
+    <span id="teddyPrice" class="text-gray-500 mt-3">${data.price}€</span>`;
   teddyImage.innerHTML += `
     <img class="h-full w-full rounded-md object-cover max-w-lg mx-auto"
     src="${data.imageUrl}" alt="Ours en peluche"/>`;

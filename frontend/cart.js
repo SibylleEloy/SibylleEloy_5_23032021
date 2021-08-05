@@ -10,36 +10,49 @@ function cartOpen() {
   body.classList.add("cartOpened");
 }
 
-//-----------Gestion du panier---------------
-// récuperation des données produit de l'utilisateur
-
-// compter le nombre de clics sur le bouton Order
-// let clicks = 0;
-// function onClick() {
-//   clicks += 1;
-//   document.getElementById("clicks").innerHTML = clicks;
-// }
-// console.log(clicks);
+//-----------Gestion du panier----------------------
 
 let clicks = 0;
 function addToCart() {
+  // compter les quantités de produit - nb clic sur le bouton order
   clicks += 1;
   document.getElementById("clicks").innerHTML = clicks;
   console.log(clicks);
-  // sélectionner élement du DOM
+  // récuperer les données produit de l'utilisateur
+  const cartName = document.getElementById("teddyName").innerText;
+  console.log(cartName);
+  document.getElementById("name").innerText = cartName;
 
-  //   const teddyName = document.getElementById("name").innerHTML
-  //   console.log(teddyName;
-  const name = document.getElementById("teddyName").innerText;
-  console.log(name);
+  const cartPrice = document.getElementById("teddyPrice").innerText;
+  console.log(cartPrice);
+  document.getElementById("price").innerText = cartPrice;
 
-  document.getElementById("name").innerText = name;
+  const cartImage = document.getElementById("teddyImage").innerHTML;
+  console.log(cartImage);
+  document.getElementById("image").innerHTML = cartImage;
 
-  //   teddyCart.innerHTML += `
-  //     <div class="font-bold">${name}</div>`;
-  //     <h3 class="text-gray-700 uppercase text-lg">${data.name}</h3>
-  //     <span class="text-gray-500 mt-3">${data.price}€</span>`;
-  //   teddyImage.innerHTML += `
-  //     <img class="h-full w-full rounded-md object-cover max-w-lg mx-auto"
-  //     src="${data.imageUrl}" alt="Ours en peluche"/>`;
+  // ----------------localStorage-----------------------------
+  let selectedProduct = {
+    name: cartName,
+    price: cartPrice,
+    quantity: clicks,
+  };
+  console.log(selectedProduct);
+
+  let selectedProduct_serialized = JSON.stringify(selectedProduct);
+  console.log(selectedProduct_serialized);
+  localStorage.setItem("selectedProduct", selectedProduct_serialized);
+  console.log(localStorage);
+  let selectedProduct_deserialized = JSON.parse(
+    localStorage.getItem("selectedProduct")
+  );
+  console.log(selectedProduct_deserialized);
 }
+
+// document.getElementById("total").innerText = total;
+// let total = 0;
+// let price = 0;
+// for (let i = 0; i < price.length; i++) {
+//   total += price[i];
+// }
+// console.log(total);
