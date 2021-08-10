@@ -42,7 +42,7 @@ function putTeddiesOnPage(data) {
   data.forEach(function (teddy) {
     teddyCollectionDiv.innerHTML += `
         <a href="page-product.html?id=${teddy._id}">
-            <div class="teddyCard w-80 m-auto" id="${teddy._id}">
+            <div id="teddyCard w-80 m-auto" id="${teddy._id}">
                 <img style="width: 100%" src="${teddy.imageUrl}" alt="Teddy Bear" class="block h-60 rounded-lg shadow-lg" />
                 <div class="flex items-center justify-between mt-3">
                   <div>
@@ -50,7 +50,7 @@ function putTeddiesOnPage(data) {
                       <span class="text-xs font-medium text-gray-600"
                       ><i class="fas fa-shopping-cart"></i></span>
                       <span class="text-xs font-medium ml-1 text-indigo-500"
-                      >${teddy.description}</span>
+                      ><p>Prix : <span id="total-price">${teddy.price}</span> € </p>
                   </div>
                 </div>
             </div>
