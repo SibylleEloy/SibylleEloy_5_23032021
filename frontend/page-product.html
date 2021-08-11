@@ -298,12 +298,12 @@
           >
             Cart
           </button> -->
-
+          <!-- Cart -->
           <div class="p-3" x-data="{ open: false }">
             <div class="flex justify-center">
               <div class="relative">
                 <button
-                  onclick="cartOpen()"
+                  onclick="return cartOpen()"
                   @click="open = !open"
                   id="buttonCart"
                   class="flex flex-row cursor-pointer truncate p-2 px-4 rounded"
@@ -951,6 +951,5 @@
     </div>
     <!-- javaScript Code -->
     <script src="page-product.js"></script>
-    <script src="cart.js"></script>
   </body>
 </html>
