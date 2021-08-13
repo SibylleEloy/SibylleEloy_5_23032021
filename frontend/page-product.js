@@ -34,11 +34,11 @@ function putTeddyOnPage(data) {
 //----------------Gestion du panier et localStorage---------------------
 
 //******Récuperer les données produit au clic sur bouton Order Now
-
+// let clicks = 0;
 function addToCart(option) {
   // compter les quantités de produit - nb clic sur le bouton order
   // clicks += 1;
-  // document.getElementById("clicks").innerHTML = clicks;
+  // document.getElementById("cart").innerHTML = clicks;
 
   // récuperer les données produit de l'utilisateur
   const cartName = document.getElementById("teddyName").innerText;
@@ -65,7 +65,7 @@ function addToCart(option) {
 
   //******Enregistrer les données dans le localStorage
 
-  // This code below should only be run if you are not already storing a serialized array in your localStorage session variable.
+  // If you are not already storing a serialized array in your localStorage session variable.
   // var a = [];
   // a.push(JSON.parse(localStorage.getItem('session')));
   // localStorage.setItem('session', JSON.stringify(a));
@@ -80,17 +80,24 @@ function addToCart(option) {
   localStorage.setItem("session", JSON.stringify(productInLocalStorage));
 
   //*******Afficher le panier
+
+  // afficher le compteur
+  const cartCounter = document.getElementById("cartCounterAlert");
+  console.log(productInLocalStorage.length);
+  cartCounter.innerText = productInLocalStorage.length;
+
+ // afficher la dropdown
   const cartPosition = document.getElementById("cartStructure");
   console.log(cartPosition);
 
   let structureCartProduct = [];
   console.log(productInLocalStorage);
 
-  // if (productInLocalStorage === null || productInLocalStorage == 0) {
-  //   const emptyCart = `
-  //   <div class="flex-auto text-sm w-32">Cart is empty</div>`;
-  //   cartPosition.innerHTML = emptyCart;
-  // } else {
+  if (productInLocalStorage === null || productInLocalStorage == 0) {
+    const emptyCart = `
+    <div class="flex-auto text-sm w-32">Cart is empty</div>`;
+    cartPosition.innerHTML = emptyCart;
+  } else {
   for (j = 0; j < productInLocalStorage.length; j++) {
     structureCartProduct =
       structureCartProduct +
@@ -130,13 +137,10 @@ function addToCart(option) {
   if (j == productInLocalStorage.length) {
     cartPosition.innerHTML = structureCartProduct;
   }
-  // }
+  }
   console.log(productInLocalStorage);
 
-
   //******Supprimer des éléments du panier
-
-
   let deleteBtn = document.querySelectorAll(".deleteBtn");
   console.log(deleteBtn);
 
@@ -160,7 +164,8 @@ function addToCart(option) {
   }
 
   //******Supprimer le panier en totalité
-  const detelAllBtnHtml = `<button class="bg-white hover:bg-gray-100 text-gray-800 font-semibold mt-3 py-1 px-2 border border-gray-400 rounded shadow" id="deleteAllBtn"> Empty Cart </button>`;
+  
+  const detelAllBtnHtml = `<button class="bg-white hover:bg-gray-100 text-gray-800 font-semibold mt-3 py-1 px-1 border border-gray-400 rounded shadow" id="deleteAllBtn"> Empty Cart </button>`;
   cartPosition.insertAdjacentHTML("beforeend", detelAllBtnHtml);
   const deteleAllBtn = document.getElementById("deleteAllBtn");
   console.log(deleteAllBtn);
