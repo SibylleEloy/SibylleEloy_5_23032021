@@ -1,4 +1,5 @@
 // recupérer la chaîne de requête dans l'url
+var productInLocalStorage = [];
 const queryStringUrlId = window.location.search;
 console.log(queryStringUrlId);
 
@@ -6,11 +7,14 @@ console.log(queryStringUrlId);
 const pageId = queryStringUrlId.slice(4);
 console.log(pageId);
 
+
 //-------------------Affichage produit sur la page------------------
 
 fetch(`http://localhost:3000/api/teddies/${pageId}`)
   .then((response) => response.json())
-  .then((data) => putTeddyOnPage(data));
+  .then((data) => putTeddyOnPage(data))
+  .then(() => addToCart('refresh'));
+  
 
 function putTeddyOnPage(data) {
   // sélectionner élement du DOM
@@ -29,9 +33,9 @@ function putTeddyOnPage(data) {
 
 //----------------Gestion du panier et localStorage---------------------
 
-// récuperer les données produit au clic sur bouton Order Now
+//******Récuperer les données produit au clic sur bouton Order Now
 
-function addToCart() {
+function addToCart(option) {
   // compter les quantités de produit - nb clic sur le bouton order
   // clicks += 1;
   // document.getElementById("clicks").innerHTML = clicks;
@@ -59,26 +63,34 @@ function addToCart() {
 
   console.log(selectedProduct);
 
-  // enregistrer les données dans le localStorage
+  //******Enregistrer les données dans le localStorage
 
   // This code below should only be run if you are not already storing a serialized array in your localStorage session variable.
   // var a = [];
   // a.push(JSON.parse(localStorage.getItem('session')));
   // localStorage.setItem('session', JSON.stringify(a));
 
-  var productInLocalStorage = [];
+  
   // Parse the serialized data back into an aray of objects
   productInLocalStorage = JSON.parse(localStorage.getItem("session")) || [];
   // Push the new data (whether it be an object or anything else) onto the array
-  productInLocalStorage.push(selectedProduct);
+ 
+  (option == 'add') ? productInLocalStorage.push(selectedProduct): "";
   // Re-serialize the array back into a string and store it in localStorage
   localStorage.setItem("session", JSON.stringify(productInLocalStorage));
 
-  // afficher le panier
+  //*******Afficher le panier
   const cartPosition = document.getElementById("cartStructure");
   console.log(cartPosition);
 
   let structureCartProduct = [];
+  console.log(productInLocalStorage);
+
+  // if (productInLocalStorage === null || productInLocalStorage == 0) {
+  //   const emptyCart = `
+  //   <div class="flex-auto text-sm w-32">Cart is empty</div>`;
+  //   cartPosition.innerHTML = emptyCart;
+  // } else {
   for (j = 0; j < productInLocalStorage.length; j++) {
     structureCartProduct =
       structureCartProduct +
@@ -109,7 +121,8 @@ function addToCart() {
           ></path>
           <line x1="10" y1="11" x2="10" y2="17"></line>
           <line x1="14" y1="11" x2="14" y2="17"></line>
-        </svg></button>
+          </svg>
+        <input class="index-produit" type="hidden" value=${j}/></button>
       </div>
       <div id="price">${productInLocalStorage[j].price} €</div>
       </div>`;
@@ -117,31 +130,63 @@ function addToCart() {
   if (j == productInLocalStorage.length) {
     cartPosition.innerHTML = structureCartProduct;
   }
-
+  // }
   console.log(productInLocalStorage);
 
-  // supprimer des éléments du panier
+
+  //******Supprimer des éléments du panier
+
+
   let deleteBtn = document.querySelectorAll(".deleteBtn");
   console.log(deleteBtn);
 
   for (let k = 0; k < deleteBtn.length; k++) {
     deleteBtn[k].addEventListener("click", (event) => {
+      
       event.preventDefault();
 
-      let idToDelete = productInLocalStorage[k].id;
-      console.log(idToDelete);
+    productInLocalStorage.splice(k, 1);
 
-      productInLocalStorage = productInLocalStorage.filter(
-        (element) => element.id !== idToDelete
-      );
-      console.log(productInLocalStorage);
+      // productInLocalStorage = productInLocalStorage.filter(
+      //   (element) => element.id !== idToDelete
+      // );
+      console.log("element courant du panier",JSON.stringify(productInLocalStorage));
 
       localStorage.setItem("session", JSON.stringify(productInLocalStorage));
 
-      alert("Product deleted!");
-      // window.location.href = "page-product.html";
+      document.getElementById("refreshBtn").click();
+      
     });
   }
+
+  //******Supprimer le panier en totalité
+  const detelAllBtnHtml = `<button class="bg-white hover:bg-gray-100 text-gray-800 font-semibold mt-3 py-1 px-2 border border-gray-400 rounded shadow" id="deleteAllBtn"> Empty Cart </button>`;
+  cartPosition.insertAdjacentHTML("beforeend", detelAllBtnHtml);
+  const deteleAllBtn = document.getElementById("deleteAllBtn");
+  console.log(deleteAllBtn);
+  deteleAllBtn.addEventListener("click", (e) => {
+    e.preventDefault;
+    localStorage.removeItem("session");
+    
+    window.location.reload();
+  });
+
+  //******Calculer le montant total du panier
+  let totalPrice = [];
+
+  for (let k = 0; k < productInLocalStorage.length; k++) {
+    let cartPrices = Number(productInLocalStorage[k].price);
+    totalPrice.push(cartPrices);
+    console.log(totalPrice);
+  }
+  const reducer = (accumulator, currentValue) => accumulator + currentValue;
+  const cartTotalPrice = (totalPrice.reduce(reducer, 0)).toLocaleString();
+  console.log(cartTotalPrice);
+  
+  const displayTotalPriceHtml = `<div>Checkout - ${cartTotalPrice} €</div>`;
+
+  document.getElementById("checkoutBtn").innerHTML = displayTotalPriceHtml;
+
 
   return false;
 }
@@ -156,8 +201,11 @@ function cartOpen() {
 
   cart.classList.add("cartOpened");
   // body.classList.add("cartOpened");
+
   return false;
 }
+
+
 
 // ----------------Function localStorage-----------------------------
 // This code below should only be run if you are not already storing a serialized array in your localStorage session variable.
