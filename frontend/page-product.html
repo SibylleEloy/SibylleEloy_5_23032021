@@ -278,14 +278,16 @@
             <div class="flex justify-center">
               <div class="relative">
                 <button
-                  onclick="return cartOpen()"
+                  onclick="window.location='page-cart.html';"
                   @click="open = !open"
                   id="buttonCart"
-                  class="flex flex-row cursor-pointer truncate p-2 px-4 rounded">
+                  class="flex flex-row cursor-pointer truncate p-2 px-4 rounded"
+                >
                   <div></div>
                   <div class="flex flex-row-reverse ml-2 w-full">
                     <div slot="icon" class="relative">
-                      <div id = cartCounterAlert
+                      <div
+                        id="cartCounterAlert"
                         class="
                           absolute
                           text-xs
@@ -299,8 +301,7 @@
                           bg-red-700
                           text-white
                         "
-                      >
-                      </div>
+                      ></div>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="100%"
@@ -340,10 +341,11 @@
                         hover:bg-gray-100
                         cursor-pointer
                         border-b border-gray-100
-                      ">
-                    </div>
+                      "
+                    ></div>
                     <div class="bg-white p-4 justify-center flex">
-                      <button id="checkoutBtn"
+                      <button
+                        id="checkoutBtn"
                         class="
                           text-base
                           undefined
@@ -364,8 +366,8 @@
                           ease-in-out
                           border-teal-600
                           transition
-                        ">
-                      </button>
+                        "
+                      ></button>
                     </div>
                   </div>
                 </div>
@@ -585,18 +587,34 @@
               Order Now
             </button>
             <button
-            onclick="addToCart('refresh')"
-            id="refreshBtn" style="display:none">
-          </button>
+              onclick="addToCart('refresh')"
+              id="refreshBtn"
+              style="display: none"
+            ></button>
           </div>
         </div>
       </div>
       <!-- revenir à la liste -->
 
-      <button onclick="location.href='page-product-list.html'" type="button" class="mt-16 bg-transparent hover:bg-indigo-600 text-indigo-600 font-semibold hover:text-white py-2 px-4 border border-indigo-600 hover:border-transparent rounded">
+      <button
+        onclick="location.href='page-product-list.html'"
+        type="button"
+        class="
+          mt-16
+          bg-transparent
+          hover:bg-indigo-600
+          text-indigo-600
+          font-semibold
+          hover:text-white
+          py-2
+          px-4
+          border border-indigo-600
+          hover:border-transparent
+          rounded
+        "
+      >
         Back to Teddies Selection
       </button>
-
 
       <!-- Plus de produits -->
       <div class="mt-16">
