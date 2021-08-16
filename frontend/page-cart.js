@@ -127,6 +127,97 @@ const displayTotalPriceHtml = `<div>${cartTotalPrice} €</div>`;
 document.getElementById("orderPrice").innerHTML = displayTotalPriceHtml;
 document.getElementById("totalCost").innerHTML = displayTotalPriceHtml;
 
+//-------------------Récupérer les données Checkout------------------------
+
+// afficher le formulaire
+const displayFormHtml = () => {
+  const formPosition = document.getElementById("form");
+  const structureForm = `<label class="font-medium inline-block mb-3 text-sm uppercase">Contact</label>
+    <div class="py-2">
+      <div class="max-w-md">
+        <div class="grid grid-cols-1 gap-6">
+          <label class="block">
+            <span class="block text-sm font-medium text-gray-700">Full name</span>
+            <input id="fullName"
+              type="text"
+              class="
+                mt-0
+                block
+                w-full
+                px-0.5
+                border-0 border-b-2 border-gray-200
+                focus:ring-0 focus:border-black
+              "
+              placeholder=""
+            />
+          </label>
+          <label class="block">
+            <span class="block text-sm font-medium text-gray-700">Email address</span>
+            <input id="email"
+              type="email"
+              class="
+                mt-0
+                block
+                w-full
+                px-0.5
+                border-0 border-b-2 border-gray-200
+                focus:ring-0 focus:border-black
+              "
+              placeholder="john@example.com"
+            />
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="py-10">
+      <label for="promo" class="font-semibold inline-block mb-3 text-sm uppercase">Shipping</label>
+      <div class="mt-2">
+        <div class="col-span-6">
+          <label for="street_address" class="block text-sm font-medium text-gray-700">Street address</label>
+          <input id="adress" type="text" name="street_address" id="street_address" autocomplete="street-address" class="
+          mt-0
+          block
+          w-full
+          px-0.5
+          border-0 border-b-2 border-gray-200
+          focus:ring-0 focus:border-black
+        ">
+        </div>
+
+        <div class="col-span-6 sm:col-span-6 lg:col-span-2">
+          <label for="city" class="mt-4 block text-sm font-medium text-gray-700">City</label>
+          <input id="city" type="text" name="city" id="city" class="
+          mt-0
+          block
+          w-full
+          px-0.5
+          border-0 border-b-2 border-gray-200
+          focus:ring-0 focus:border-black
+        ">
+        </div>
+      </div>
+    </div>`;
+  formPosition.insertAdjacentHTML("afterend", structureForm);
+};
+
+displayFormHtml();
+
+// récupérer les données dans le localStorage
+
+function store() {
+  let inputFullName = document.getElementById("fullName");
+  localStorage.setItem("Full Name", inputFullName.value);
+
+  let inputEmail = document.getElementById("email");
+  localStorage.setItem("Email", inputEmail.value);
+
+  let inputAddress = document.getElementById("adress");
+  localStorage.setItem("Address", inputAddress.value);
+
+  let inputCity = document.getElementById("city");
+  localStorage.setItem("City", inputCity.value);
+}
+
 // //----------------Gestion du panier et localStorage---------------------
 
 // //******Récuperer les données produit au clic sur bouton Order Now
