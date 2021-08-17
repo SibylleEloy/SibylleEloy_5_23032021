@@ -73,12 +73,12 @@ function addToCart(option) {
   // localStorage.setItem('session', JSON.stringify(a));
 
   // Parse the serialized data back into an aray of objects
-  productInLocalStorage = JSON.parse(localStorage.getItem("session")) || [];
+  productInLocalStorage = JSON.parse(localStorage.getItem("products")) || [];
   // Push the new data (whether it be an object or anything else) onto the array
 
   option == "add" ? productInLocalStorage.push(selectedProduct) : "";
   // Re-serialize the array back into a string and store it in localStorage
-  localStorage.setItem("session", JSON.stringify(productInLocalStorage));
+  localStorage.setItem("products", JSON.stringify(productInLocalStorage));
 
   //*******Afficher le panier
 
@@ -159,7 +159,7 @@ function addToCart(option) {
         JSON.stringify(productInLocalStorage)
       );
 
-      localStorage.setItem("session", JSON.stringify(productInLocalStorage));
+      localStorage.setItem("products", JSON.stringify(productInLocalStorage));
 
       document.getElementById("refreshBtn").click();
     });
@@ -173,7 +173,7 @@ function addToCart(option) {
   console.log(deleteAllBtn);
   deteleAllBtn.addEventListener("click", (e) => {
     e.preventDefault;
-    localStorage.removeItem("session");
+    localStorage.removeItem("products");
 
     window.location.reload();
   });

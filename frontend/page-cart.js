@@ -1,4 +1,4 @@
-let productInLocalStorage = JSON.parse(localStorage.getItem("session"));
+let productInLocalStorage = JSON.parse(localStorage.getItem("products"));
 console.log(productInLocalStorage);
 
 //----------------Gestion du panier et localStorage---------------------
@@ -89,7 +89,7 @@ for (let k = 0; k < deleteBtn.length; k++) {
       JSON.stringify(productInLocalStorage)
     );
 
-    localStorage.setItem("session", JSON.stringify(productInLocalStorage));
+    localStorage.setItem("products", JSON.stringify(productInLocalStorage));
 
     window.location.reload();
   });
@@ -105,7 +105,7 @@ const deteleAllBtn = document.getElementById("deleteAllBtn");
 console.log(deleteAllBtn);
 deteleAllBtn.addEventListener("click", (e) => {
   e.preventDefault;
-  localStorage.removeItem("session");
+  localStorage.removeItem("products");
 
   window.location.reload();
 });
@@ -174,7 +174,7 @@ const displayFormHtml = () => {
       <div class="mt-2">
         <div class="col-span-6">
           <label for="street_address" class="block text-sm font-medium text-gray-700">Street address</label>
-          <input id="adress" type="text" name="street_address" id="street_address" autocomplete="street-address" class="
+          <input id="address" type="text" name="street_address" id="street_address" autocomplete="street-address" class="
           mt-0
           block
           w-full
@@ -202,20 +202,25 @@ const displayFormHtml = () => {
 
 displayFormHtml();
 
-// récupérer les données dans le localStorage
+// checkout récupérer les données dans le localStorage et stocker produits et données clients
 
 function store() {
-  let inputFullName = document.getElementById("fullName");
-  localStorage.setItem("Full Name", inputFullName.value);
+  const formValues = {
+    fullName: document.getElementById("fullName").value,
+    Email: document.getElementById("email").value,
+    Address: document.getElementById("address").value,
+    City: document.getElementById("city").value,
+  };
 
-  let inputEmail = document.getElementById("email");
-  localStorage.setItem("Email", inputEmail.value);
+  console.log(formValues);
 
-  let inputAddress = document.getElementById("adress");
-  localStorage.setItem("Address", inputAddress.value);
+  localStorage.setItem("form", JSON.stringify(formValues));
 
-  let inputCity = document.getElementById("city");
-  localStorage.setItem("City", inputCity.value);
+  const checkoutData = {
+    productInLocalStorage,
+    formValues,
+  };
+  console.log(checkoutData);
 }
 
 // //----------------Gestion du panier et localStorage---------------------
