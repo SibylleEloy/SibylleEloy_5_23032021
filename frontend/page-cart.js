@@ -3,12 +3,6 @@ console.log(productInLocalStorage);
 
 //----------------Gestion du panier et localStorage---------------------
 
-// afficher les compteurs
-const cartCounterList = document.getElementById("cartCounterAlert");
-console.log(cartCounterList);
-console.log(productInLocalStorage.length);
-cartCounterList.innerText = productInLocalStorage.length;
-
 // afficher les produits dans le panier
 
 const cartPosition = document.querySelector("#container-products-cart");
@@ -55,21 +49,54 @@ if (productInLocalStorage === null || productInLocalStorage == 0) {
                   </div>
                 </div>
                 <div class="flex justify-center w-1/5">
-                  <svg class="fill-current text-gray-600 w-3" viewBox="0 0 448 512"><path d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"/>
-                  </svg>
-                  <input class="mx-2 border text-center w-8" type="text" value="1">
-                  <svg class="fill-current text-gray-600 w-3" viewBox="0 0 448 512">
-                    <path d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"/>
-                  </svg>
+                    <span class="text-center w-1/5 font-semibold text-sm">${productInLocalStorage[j].quantity}</span>
                 </div>
                 <span class="text-center w-1/5 font-semibold text-sm">${productInLocalStorage[j].price} €</span>
-                <span class="text-center w-1/5 font-semibold text-sm">$400.00</span>
-              </div>`;
+                <span class="text-center w-1/5 font-semibold text-sm">${productInLocalStorage[j].total} €</span>
+              </div>
+              `;
   }
   if (j == productInLocalStorage.length) {
     cartPosition.innerHTML = structureCartProduct;
   }
 }
+
+// ******Rationnaliser le panier
+var addItem = function (id, qty, price) {
+  var match = productInLocalStorage.find(function (item) {
+    return item["id"] === id;
+  });
+  if (match) {
+    match["quantity"] += qty;
+    match["total"] += price;
+  } else {
+    var newProductInLocalStorage = {
+      "product-id": sku,
+      "product-qty": qty,
+      "product-price": price,
+    };
+    productInLocalStorage.push(newProductInLocalStorage);
+  }
+  localStorage.setItem("cart", JSON.stringify(productInLocalStorage));
+};
+
+console.log(JSON.parse(localStorage.getItem("cart")));
+addItem();
+
+// afficher le compteur
+let totalQuantity = [];
+
+for (let m = 0; m < productInLocalStorage.length; m++) {
+  let cartQuantities = Number(productInLocalStorage[m].quantity);
+  totalQuantity.push(cartQuantities);
+  console.log(totalQuantity);
+}
+const reducer1 = (accumulator, currentValue) => accumulator + currentValue;
+const cartTotalQuantity = totalQuantity.reduce(reducer1, 0).toLocaleString();
+console.log(cartTotalQuantity);
+
+const cartCounterList = document.getElementById("cartCounterAlert");
+cartCounterList.innerText = cartTotalQuantity;
 
 //******Supprimer des éléments du panier
 let deleteBtn = document.querySelectorAll(".deleteBtn");
@@ -96,7 +123,6 @@ for (let k = 0; k < deleteBtn.length; k++) {
 }
 
 //  ******Supprimer le panier en totalité
-
 const detelAllBtnHtml = `<div class="flex justify-center mt-4"><button id="deleteAllBtn" class="uppercase p-3 flex items-center  border border-red-600 text-red-600 max-w-max shadow-sm hover:shadow-lg rounded-full w-12 h-12 ">
 <svg width="32" height="32" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32" style="transform: rotate(360deg);"><path d="M12 12h2v12h-2z" fill="currentColor"></path><path d="M18 12h2v12h-2z" fill="currentColor"></path><path d="M4 6v2h2v20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8h2V6zm4 22V8h16v20z" fill="currentColor"></path><path d="M12 2h8v2h-8z" fill="currentColor"></path></svg>
         </button></div>`;
@@ -114,7 +140,7 @@ deteleAllBtn.addEventListener("click", (e) => {
 let totalPrice = [];
 
 for (let k = 0; k < productInLocalStorage.length; k++) {
-  let cartPrices = Number(productInLocalStorage[k].price);
+  let cartPrices = Number(productInLocalStorage[k].total);
   totalPrice.push(cartPrices);
   console.log(totalPrice);
 }
@@ -129,7 +155,7 @@ document.getElementById("totalCost").innerHTML = displayTotalPriceHtml;
 
 //-------------------Récupérer les données Checkout------------------------
 
-// afficher le formulaire
+//***Afficher le formulaire
 const displayFormHtml = () => {
   const formPosition = document.getElementById("form");
   const structureForm = `<label class="font-medium inline-block mb-3 text-sm uppercase">Contact</label>
@@ -204,6 +230,9 @@ displayFormHtml();
 
 // checkout récupérer les données dans le localStorage et stocker produits et données clients
 
+const choosenQty = document.getElementById("productQty").value;
+console.log(choosenQty);
+
 function store() {
   const formValues = {
     fullName: document.getElementById("fullName").value,
@@ -221,6 +250,28 @@ function store() {
     formValues,
   };
   console.log(checkoutData);
+
+  const dataPost = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(checkoutData),
+  };
+
+  fetch("http://localhost:3000/api/teddies", dataPost)
+    .then((data) => {
+      if (!data.ok) {
+        throw Error(data.status);
+      }
+      return data.json();
+    })
+    .then((checkoutData) => {
+      console.log(checkoutData);
+    })
+    .catch((e) => {
+      console.log(e);
+    });
 }
 
 // //----------------Gestion du panier et localStorage---------------------

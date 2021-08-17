@@ -30,6 +30,43 @@ function putTeddyOnPage(data) {
     src="${data.imageUrl}" alt="Ours en peluche"/>`;
 }
 
+//****Modifier les quantités
+function decrement(e) {
+  const btn = e.target.parentNode.parentElement.querySelector(
+    'button[data-action="decrement"]'
+  );
+  const target = btn.nextElementSibling;
+  let value = Number(target.value);
+  value--;
+  target.value = value;
+}
+
+function increment(e) {
+  const btn = e.target.parentNode.parentElement.querySelector(
+    'button[data-action="decrement"]'
+  );
+  const target = btn.nextElementSibling;
+  let value = Number(target.value);
+  value++;
+  target.value = value;
+}
+
+const decrementButtons = document.querySelectorAll(
+  `button[data-action="decrement"]`
+);
+
+const incrementButtons = document.querySelectorAll(
+  `button[data-action="increment"]`
+);
+
+decrementButtons.forEach((btn) => {
+  btn.addEventListener("click", decrement);
+});
+
+incrementButtons.forEach((btn) => {
+  btn.addEventListener("click", increment);
+});
+
 //----------------Gestion du panier et localStorage---------------------
 
 //******Récuperer les données produit au clic sur bouton Order Now
@@ -54,38 +91,42 @@ function addToCart(option) {
   console.log(cartImage);
   // document.getElementById("image").innerHTML = cartImage;
 
+  const cartQty = document.getElementById("productQty").value;
+  console.log(cartQty);
+
   let selectedProduct = {
     id: pageId,
     image: cartImage,
     name: cartName,
     description: cartDescription,
     price: cartPrice,
-    quantity: 1,
+    total: cartPrice * cartQty,
+    quantity: cartQty,
   };
 
   console.log(selectedProduct);
 
   //******Enregistrer les données dans le localStorage
-
-  // If you are not already storing a serialized array in your localStorage session variable.
-  // var a = [];
-  // a.push(JSON.parse(localStorage.getItem('session')));
-  // localStorage.setItem('session', JSON.stringify(a));
-
-  // Parse the serialized data back into an aray of objects
   productInLocalStorage = JSON.parse(localStorage.getItem("products")) || [];
-  // Push the new data (whether it be an object or anything else) onto the array
-
   option == "add" ? productInLocalStorage.push(selectedProduct) : "";
-  // Re-serialize the array back into a string and store it in localStorage
   localStorage.setItem("products", JSON.stringify(productInLocalStorage));
 
   //*******Afficher le panier
 
   // afficher le compteur
-  const cartCounter = document.getElementById("cartCounterAlert");
-  console.log(productInLocalStorage.length);
-  cartCounter.innerText = productInLocalStorage.length;
+  let totalQuantity = [];
+
+  for (let m = 0; m < productInLocalStorage.length; m++) {
+    let cartQuantities = Number(productInLocalStorage[m].quantity);
+    totalQuantity.push(cartQuantities);
+    console.log(totalQuantity);
+  }
+  const reducer1 = (accumulator, currentValue) => accumulator + currentValue;
+  const cartTotalQuantity = totalQuantity.reduce(reducer1, 0).toLocaleString();
+  console.log(cartTotalQuantity);
+
+  const cartCounterList = document.getElementById("cartCounterAlert");
+  cartCounterList.innerText = cartTotalQuantity;
 
   // afficher la dropdown
   const cartPosition = document.getElementById("cartStructure");
@@ -166,7 +207,6 @@ function addToCart(option) {
   }
 
   //******Supprimer le panier en totalité
-
   const detelAllBtnHtml = `<button class="bg-white hover:bg-gray-100 text-gray-800 font-semibold mt-3 py-1 px-1 border border-gray-400 rounded shadow" id="deleteAllBtn"> Empty Cart </button>`;
   cartPosition.insertAdjacentHTML("beforeend", detelAllBtnHtml);
   const deteleAllBtn = document.getElementById("deleteAllBtn");
