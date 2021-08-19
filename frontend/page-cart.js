@@ -61,28 +61,6 @@ if (productInLocalStorage === null || productInLocalStorage == 0) {
   }
 }
 
-// ******Rationnaliser le panier
-var addItem = function (id, qty, price) {
-  var match = productInLocalStorage.find(function (item) {
-    return item["id"] === id;
-  });
-  if (match) {
-    match["quantity"] += qty;
-    match["total"] += price;
-  } else {
-    var newProductInLocalStorage = {
-      "product-id": sku,
-      "product-qty": qty,
-      "product-price": price,
-    };
-    productInLocalStorage.push(newProductInLocalStorage);
-  }
-  localStorage.setItem("cart", JSON.stringify(productInLocalStorage));
-};
-
-console.log(JSON.parse(localStorage.getItem("cart")));
-addItem();
-
 // afficher le compteur
 let totalQuantity = [];
 
