@@ -109,7 +109,7 @@
                 focus:bg-gray-200 focus:outline-none focus:shadow-outline
               "
               href="#"
-              >About</a
+              >A propos</a
             >
             <div
               @click.away="open = false"
@@ -275,7 +275,7 @@
             </div>
           </nav>
           <!-- Cart -->
-          <div class="p-3" x-data="{ open: false }">
+          <div class="p-3">
             <div class="flex justify-center">
               <div class="relative">
                 <button
@@ -288,7 +288,7 @@
                   <div class="flex flex-row-reverse ml-2 w-full">
                     <div slot="icon" class="relative">
                       <div
-                        id="cartCounterAlert"
+                        id="cartCounterAlert2"
                         class="
                           absolute
                           text-xs
@@ -328,48 +328,6 @@
                   x-show="open"
                   class="absolute w-full rounded-b border-t-0 z-10"
                 >
-                  <div
-                    id="dropdownCart"
-                    x-show="open"
-                    class="shadow-xl w-64 transform -translate-x-40 z-10"
-                  >
-                    <div
-                      id="cartStructure"
-                      class="
-                        p-2
-                        flex flex-col
-                        bg-white
-                        hover:bg-gray-100
-                        cursor-pointer
-                        border-b border-gray-100
-                      "
-                    ></div>
-                    <div class="bg-white p-4 justify-center flex">
-                      <button
-                        id="checkoutBtn"
-                        class="
-                          text-base
-                          undefined
-                          hover:scale-110
-                          focus:outline-none
-                          flex
-                          justify-center
-                          px-4
-                          py-2
-                          rounded
-                          font-bold
-                          cursor-pointer
-                          hover:bg-teal-700 hover:text-teal-100
-                          bg-teal-100
-                          text-teal-700
-                          border
-                          duration-200
-                          ease-in-out
-                          border-teal-600
-                          transition
-                        "
-                      ></button>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -379,7 +337,7 @@
         </div>
       </div>
     </header>
-    <div class="p-10 bg-gray-100 text-gray-800">
+    <div class="p-8 bg-gray-100 text-gray-800">
       <!-- Title -->
       <h1 class="text-2xl">
         Notre sélection d'ours en peluche faits à la main

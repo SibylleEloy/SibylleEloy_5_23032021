@@ -30,6 +30,43 @@ function putTeddyOnPage(data) {
     src="${data.imageUrl}" alt="Ours en peluche"/>`;
 }
 
+//-------------------Affichage des autres produits sur la page------------------
+
+// déclaration des variables
+let _id = [];
+
+// afficher les produits sur la page
+fetch("http://localhost:3000/api/teddies")
+  .then((response) => response.json())
+  .then((data) => putTeddiesOnPage(data));
+
+function putTeddiesOnPage(data) {
+  // sélection élement du DOM
+  const moreTeddiesDiv = document.getElementById("moreTeddies");
+  // boucle pour afficher les objets sur la page
+  data.forEach(function (teddy) {
+    if (teddy._id !== pageId) {
+      moreTeddiesDiv.innerHTML += `
+        <a href="page-product.html?id=${teddy._id}">
+        <div
+        class="w-full max-w-sm mx-auto rounded-md shadow-md overflow-hidden"
+      >
+        <div
+          class="flex items-end justify-end h-56 w-full bg-cover"
+          style="background-image: url('${teddy.imageUrl}')"
+        >
+        </div>
+        <div class="px-5 py-3">
+          <h3 class="text-gray-700 uppercase">${teddy.name}</h3>
+          <span class="text-gray-500 mt-2">${teddy.price} €</span>
+        </div>
+      </div>
+        </a>
+            `;
+    }
+  });
+}
+
 //****Modifier les quantités
 function decrement(e) {
   const btn = e.target.parentNode.parentElement.querySelector(
@@ -50,19 +87,15 @@ function increment(e) {
   value++;
   target.value = value;
 }
-
 const decrementButtons = document.querySelectorAll(
   `button[data-action="decrement"]`
 );
-
 const incrementButtons = document.querySelectorAll(
   `button[data-action="increment"]`
 );
-
 decrementButtons.forEach((btn) => {
   btn.addEventListener("click", decrement);
 });
-
 incrementButtons.forEach((btn) => {
   btn.addEventListener("click", increment);
 });

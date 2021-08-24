@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link href="css/fontawesome-free-5.15.3-web/css/all.css" rel="stylesheet" />
+    <title>Orinoco - Confirmation</title>
+  </head>
+  <body>
+    <header>
+        <script
+          src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"
+          defer
+        ></script>
+        <div
+          class="
+            w-full
+            text-gray-700
+            bg-white
+            dark-mode:text-gray-200 dark-mode:bg-gray-800
+          "
+        >
+          <div
+            x-data="{ open: false }"
+            class="
+              flex
+              max-w-screen-xl
+              px-4
+              mx-auto
+              md:items-center md:justify-between md:flex-row md:px-6
+              lg:px-8
+            "
+          >
+            <div class="flex-grow p-4 flex flex-row items-center justify-between">
+              <a
+                href="index.html"
+                class="
+                  text-lg
+                  font-semibold
+                  tracking-widest
+                  text-gray-900
+                  uppercase
+                  rounded-lg
+                  dark-mode:text-white
+                  focus:outline-none focus:shadow-outline
+                "
+                >Orinoco</a
+              >
+              <button
+                class="
+                  md:hidden
+                  rounded-lg
+                  focus:outline-none focus:shadow-outline
+                "
+                @click="open = !open"
+              >
+                <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+                  <path
+                    x-show="!open"
+                    fill-rule="evenodd"
+                    d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
+                    clip-rule="evenodd"
+                  ></path>
+                  <path
+                    x-show="open"
+                    fill-rule="evenodd"
+                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+            <nav
+              :class="{'flex': open, 'hidden': !open}"
+              class="
+                flex-col flex-grow
+                pb-4
+                md:pb-0
+                hidden
+                md:flex md:justify-end md:flex-row
+              "
+            >
+              <a
+                class="
+                  px-4
+                  py-2
+                  mt-2
+                  text-sm
+                  font-semibold
+                  bg-transparent
+                  rounded-lg
+                  dark-mode:bg-transparent
+                  dark-mode:hover:bg-gray-600
+                  dark-mode:focus:bg-gray-600
+                  dark-mode:focus:text-white
+                  dark-mode:hover:text-white
+                  dark-mode:text-gray-200
+                  md:mt-0 md:ml-4
+                  hover:text-gray-900
+                  focus:text-gray-900
+                  hover:bg-gray-200
+                  focus:bg-gray-200 focus:outline-none focus:shadow-outline
+                "
+                href="#"
+                >About</a
+              >
+              <div
+                @click.away="open = false"
+                class="relative"
+                x-data="{ open: false }"
+              >
+                <button
+                  @click="open = !open"
+                  class="
+                    flex flex-row
+                    items-center
+                    w-full
+                    px-4
+                    py-2
+                    mt-2
+                    text-sm
+                    font-semibold
+                    text-left
+                    bg-transparent
+                    rounded-lg
+                    dark-mode:bg-transparent
+                    dark-mode:focus:text-white
+                    dark-mode:hover:text-white
+                    dark-mode:focus:bg-gray-600
+                    dark-mode:hover:bg-gray-600
+                    md:w-auto md:inline md:mt-0 md:ml-4
+                    hover:text-gray-900
+                    focus:text-gray-900
+                    hover:bg-gray-200
+                    focus:bg-gray-200 focus:outline-none focus:shadow-outline
+                  "
+                >
+                  <span>Catégories</span>
+                  <svg
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                    :class="{'rotate-180': open, 'rotate-0': !open}"
+                    class="
+                      inline
+                      w-4
+                      h-4
+                      mt-1
+                      ml-1
+                      transition-transform
+                      duration-200
+                      transform
+                      md:-mt-1
+                    "
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
+                </button>
+                <div
+                  x-show="open"
+                  x-transition:enter="transition ease-out duration-100"
+                  x-transition:enter-start="transform opacity-0 scale-95"
+                  x-transition:enter-end="transform opacity-100 scale-100"
+                  x-transition:leave="transition ease-in duration-75"
+                  x-transition:leave-start="transform opacity-100 scale-100"
+                  x-transition:leave-end="transform opacity-0 scale-95"
+                  class="
+                    absolute
+                    right-0
+                    w-full
+                    mt-2
+                    origin-top-right
+                    rounded-md
+                    shadow-lg
+                    md:w-48
+                  "
+                >
+                  <div
+                    class="
+                      px-2
+                      py-2
+                      bg-white
+                      rounded-md
+                      shadow
+                      dark-mode:bg-gray-800
+                    "
+                  >
+                    <a
+                      class="
+                        block
+                        px-4
+                        py-2
+                        mt-2
+                        text-sm
+                        font-semibold
+                        bg-transparent
+                        rounded-lg
+                        dark-mode:bg-transparent
+                        dark-mode:hover:bg-gray-600
+                        dark-mode:focus:bg-gray-600
+                        dark-mode:focus:text-white
+                        dark-mode:hover:text-white
+                        dark-mode:text-gray-200
+                        md:mt-0
+                        hover:text-gray-900
+                        focus:text-gray-900
+                        hover:bg-gray-200
+                        focus:bg-gray-200 focus:outline-none focus:shadow-outline
+                      "
+                      href="page-product-list.html"
+                      >Ours en peluche</a
+                    >
+                    <a
+                      class="
+                        block
+                        px-4
+                        py-2
+                        mt-2
+                        text-sm
+                        font-semibold
+                        bg-transparent
+                        rounded-lg
+                        dark-mode:bg-transparent
+                        dark-mode:hover:bg-gray-600
+                        dark-mode:focus:bg-gray-600
+                        dark-mode:focus:text-white
+                        dark-mode:hover:text-white
+                        dark-mode:text-gray-200
+                        md:mt-0
+                        hover:text-gray-900
+                        focus:text-gray-900
+                        hover:bg-gray-200
+                        focus:bg-gray-200 focus:outline-none focus:shadow-outline
+                      "
+                      href="#"
+                      >Appareils photo</a
+                    >
+                    <a
+                      class="
+                        block
+                        px-4
+                        py-2
+                        mt-2
+                        text-sm
+                        font-semibold
+                        bg-transparent
+                        rounded-lg
+                        dark-mode:bg-transparent
+                        dark-mode:hover:bg-gray-600
+                        dark-mode:focus:bg-gray-600
+                        dark-mode:focus:text-white
+                        dark-mode:hover:text-white
+                        dark-mode:text-gray-200
+                        md:mt-0
+                        hover:text-gray-900
+                        focus:text-gray-900
+                        hover:bg-gray-200
+                        focus:bg-gray-200 focus:outline-none focus:shadow-outline
+                      "
+                      href="#"
+                      >Meubles</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </nav>
+            <!-- Cart -->
+            <div class="p-3">
+              <div class="flex justify-center">
+                <div class="relative">
+                  <button
+                    onclick="window.location='page-cart.html'"
+                    @click="open = !open"
+                    id="buttonCart"
+                    class="flex flex-row cursor-pointer truncate p-2 px-4 rounded"
+                  >
+                    <div></div>
+                    <div class="flex flex-row-reverse ml-2 w-full">
+                      <div slot="icon" class="relative">
+                        <div
+                          class="
+                            absolute
+                            text-xs
+                            rounded-full
+                            -mt-1
+                            -mr-2
+                            px-1
+                            font-bold
+                            top-0
+                            right-0
+                            bg-red-700
+                            text-white
+                          "
+                        ></div>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="100%"
+                          height="100%"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          class="feather feather-shopping-cart w-6 h-6 mt-2"
+                        >
+                          <circle cx="9" cy="21" r="1"></circle>
+                          <circle cx="20" cy="21" r="1"></circle>
+                          <path
+                            d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
+                          ></path>
+                        </svg>
+                      </div>
+                    </div>
+                  </button>
+                  <div
+                    x-show="open"
+                    class="absolute w-full rounded-b border-t-0 z-10"
+                  >
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div></div>
+            </div>
+          </div>
+        </div>
+    </header>
+
+    <div class="bg-green-100 rounded-md mt-4 p-3 flex">
+      <svg
+        class="
+          stroke-2 stroke-current
+          text-green-600
+          h-8
+          w-8
+          mr-2
+          flex-shrink-0
+        "
+        viewBox="0 0 24 24"
+        fill="none"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M0 0h24v24H0z" stroke="none" />
+        <circle cx="12" cy="12" r="9" />
+        <path d="M9 12l2 2 4-4" />
+      </svg>
+        <div class="text-green-700">
+            <div class="font-bold text-xl">Merci ! Votre commande a bien été enregistrée!</div>
+            <div>Nous sommes ravis que vous ayez trouvé notre bonheur sur Onorico. A bientôt !</div>
+        </div>
+    </div>
+        <div class="min-h-screen bg-indigo-600 flex justify-center items-center">
+            <div class="absolute w-60 h-60 rounded-xl bg-indigo-300 top-56 -left-16 z-0 transform rotate-45 hidden md:block"></div>
+            <div class="absolute w-48 h-48 rounded-xl bg-indigo-300 -bottom-6 -right-10 transform rotate-12 hidden md:block"></div>
+            <div class="py-12 px-12 bg-white rounded-2xl shadow-xl z-20">
+              <div>
+                <h1 class="text-3xl font-bold text-center mb-4 cursor-pointer">Vos informations</h1>
+                <p class="w-80 text-center text-sm mb-8 font-semibold text-gray-700 tracking-wide cursor-pointer">Commande #</p>
+                <p class="w-80 text-center text-sm mb-8 font-semibold text-gray-700 tracking-wide cursor-pointer">Prix total <span>€</span></p>
+              </div>
+              <!-- <div class="space-y-4">
+                <input type="text" placeholder="Email Addres" class="block text-sm py-3 px-4 rounded-lg w-full border outline-none" />
+                <input type="text" placeholder="Password" class="block text-sm py-3 px-4 rounded-lg w-full border outline-none" />
+              </div> -->
+              <!-- <div class="text-center mt-6">
+                <button class="py-3 w-64 text-xl text-white bg-purple-400 rounded-2xl">Create Account</button>
+                <p class="mt-4 text-sm">Already Have An Account? <span class="underline cursor-pointer"> Sign In</span></p>
+              </div>
+            </div>
+            <div class="w-40 h-40 absolute bg-indigo-300 rounded-full top-56 right-12 hidden md:block"></div>
+            <div class="w-20 h-40 absolute bg-indigo-300 rounded-full bottom-20 left-10 transform rotate-45 hidden md:block"></div> -->
+          </div>
+ 
+
+
+
+   
+  </body>
+</html>

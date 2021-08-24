@@ -42,15 +42,15 @@ function putTeddiesOnPage(data) {
   data.forEach(function (teddy) {
     teddyCollectionDiv.innerHTML += `
         <a href="page-product.html?id=${teddy._id}">
-            <div id="teddyCard w-80 m-auto" id="${teddy._id}">
+            <div id="teddyCard" class="w-auto m-auto" id="${teddy._id}">
                 <img style="width: 100%" src="${teddy.imageUrl}" alt="Teddy Bear" class="block h-60 rounded-lg shadow-lg" />
                 <div class="flex items-center justify-between mt-3">
                   <div>
                       <div class="font-medium">${teddy.name}</div>
-                      <span class="text-xs font-medium text-gray-600"
-                      ><i class="fas fa-shopping-cart"></i></span>
-                      <span class="text-xs font-medium ml-1 text-indigo-500"
-                      ><p>Prix : <span id="total-price">${teddy.price}</span> € </p>
+                      <span class="text-xs font-medium text-gray-600 mb-2"
+                      >${teddy.description}</span>
+                      <span class="text-xs font-medium ml-1 mt-2 text-indigo-500"
+                      ><p class="mt-2">Prix : <span id="total-price">${teddy.price}</span> € </p>
                   </div>
                 </div>
             </div>
@@ -59,6 +59,22 @@ function putTeddiesOnPage(data) {
     console.log(teddy._id);
   });
 }
+
+// afficher le compteur
+var productInLocalStorage = [];
+let totalQuantity = [];
+
+for (let m = 0; m < productInLocalStorage.length; m++) {
+  let cartQuantities = Number(productInLocalStorage[m].quantity);
+  totalQuantity.push(cartQuantities);
+  console.log(totalQuantity);
+}
+const reducer1 = (accumulator, currentValue) => accumulator + currentValue;
+const cartTotalQuantity = totalQuantity.reduce(reducer1, 0).toLocaleString();
+console.log(cartTotalQuantity);
+
+const cartCounterList = document.getElementById("cartCounterAlert2");
+cartCounterList.innerText = cartTotalQuantity;
 
 // const teddyCard = document.getElementById("5be9c8541c9d440000665243");
 // console.log(teddyCard);
