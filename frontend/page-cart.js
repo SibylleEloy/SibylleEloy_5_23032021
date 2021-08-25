@@ -138,6 +138,7 @@ for (let k = 0; k < productInLocalStorage.length; k++) {
 const reducer = (accumulator, currentValue) => accumulator + currentValue;
 const cartTotalPrice = totalPrice.reduce(reducer, 0).toLocaleString();
 console.log(cartTotalPrice);
+localStorage.setItem("total", cartTotalPrice);
 
 const displayTotalPriceHtml = `<div>${cartTotalPrice} €</div>`;
 
@@ -375,6 +376,7 @@ function sendToServer(contact, products) {
       console.log(order);
       console.log(order.orderId);
       localStorage.setItem("orderId", order.orderId);
+      window.location = "page-confirmation.html";
     })
     .catch((e) => {
       console.log(e);
