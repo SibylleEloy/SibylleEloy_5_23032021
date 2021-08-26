@@ -12,7 +12,7 @@
     <link href="css/fontawesome-free-5.15.3-web/css/all.css" rel="stylesheet" />
     <title>Orinoco - Checkout</title>
   </head>
-  <body>
+  <body class="text-gray-900 leading-normal">
     <header>
       <script
         src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"
@@ -219,7 +219,7 @@
                     href="page-product-list.html"
                     >Ours en peluche</a
                   >
-                  <a
+                  <div
                     class="
                       block
                       px-4
@@ -242,9 +242,9 @@
                       focus:bg-gray-200 focus:outline-none focus:shadow-outline
                     "
                     href="#"
-                    >Appareils photo</a
+                    >Appareils photo</div
                   >
-                  <a
+                  <div
                     class="
                       block
                       px-4
@@ -267,7 +267,7 @@
                       focus:bg-gray-200 focus:outline-none focus:shadow-outline
                     "
                     href="#"
-                    >Meubles</a
+                    >Meubles</div
                   >
                 </div>
               </div>
@@ -336,9 +336,9 @@
       </div>
     </header>
     <main class="bg-gray-100">
-      <div class="container mx-auto mt-10">
-        <div class="flex shadow-md my-10">
-          <div class="w-3/4 bg-white px-10 py-10">
+      <div class="container mx-auto">
+        <div class="md:flex shadow-md">
+          <div class="md:w-3/4 bg-white px-10 py-10">
             <div class="flex border-b pb-8">
               <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -362,7 +362,7 @@
               <!-- <div class="flex"><h2 class="cartCounterAlert font-semibold text-2xl"></h2><span class="ml-2 font-semibold text-2xl">Items</span></div> -->
             </div>
             <div class="flex mt-10 mb-5">
-              <h3 class="font-semibold text-gray-600 text-xs uppercase w-2/5">Détails de votre commande</h3>
+              <h3 class="font-semibold text-gray-600 text-xs uppercase w-2/5">Détails commande</h3>
               <h3 class="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 text-center">Quantité</h3>
               <h3 class="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 text-center">Prix</h3>
               <h3 class="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 text-center">Total</h3>
@@ -371,8 +371,7 @@
           </div>
           <div id="fullCart"></div>
         </div>
-    
-          <div id="summary" class="w-1/4 px-8 py-10">
+          <div id="summary" class="md:w-1/4 px-8 py-10">
             <h1 class="font-semibold text-2xl border-b pb-8">Votre commande</h1>
             <div class="flex justify-between mt-10 mb-5">
               <div class="flex">
@@ -385,10 +384,10 @@
             </div>
             <div class="border-t mt-6">
               <div class="flex font-semibold justify-between py-6 text-sm uppercase">
-                <span>Total cost</span>
+                <span>Total</span>
                 <span id="totalCost"></span>
               </div>
-              <button onclick="store();" id="checkoutBtn" class="bg-indigo-500 font-semibold hover:bg-indigo-600 py-3 text-sm text-white uppercase w-full">Checkout</button>
+              <button onclick="store();" id="checkoutBtn" class="bg-indigo-500 font-semibold hover:bg-indigo-600 py-3 text-sm text-white uppercase w-full">Passer la commande</button>
             </div>
           </div>
         </div>

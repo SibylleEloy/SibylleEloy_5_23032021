@@ -28,3 +28,4 @@ function removeKeyLocalStorage(key) {
 removeKeyLocalStorage("total");
 removeKeyLocalStorage("products");
 removeKeyLocalStorage("orderId");
+removeKeyLocalStorage("totalQty");

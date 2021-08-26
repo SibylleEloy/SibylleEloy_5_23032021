@@ -14,13 +14,13 @@ let structureCartProduct = [];
 if (productInLocalStorage === null || productInLocalStorage == 0) {
   const emptyCart = `<a href="page-product-list.html" class="flex font-semibold text-indigo-600 text-sm mt-10">
                         <svg class="fill-current mr-2 text-indigo-600 w-4" viewBox="0 0 448 512"><path d="M134.059 296H436c6.627 0 12-5.373 12-12v-56c0-6.627-5.373-12-12-12H134.059v-46.059c0-21.382-25.851-32.09-40.971-16.971L7.029 239.029c-9.373 9.373-9.373 24.569 0 33.941l86.059 86.059c15.119 15.119 40.971 4.411 40.971-16.971V296z"/></svg>
-                        Start Shopping
+                        Commencez les achats
                     </a>`;
   cartPosition.innerHTML = emptyCart;
 } else {
   const fullCart = ` <a href="page-product-list.html" class="flex font-semibold text-indigo-600 text-sm mt-10">
 <svg class="fill-current mr-2 text-indigo-600 w-4" viewBox="0 0 448 512"><path d="M134.059 296H436c6.627 0 12-5.373 12-12v-56c0-6.627-5.373-12-12-12H134.059v-46.059c0-21.382-25.851-32.09-40.971-16.971L7.029 239.029c-9.373 9.373-9.373 24.569 0 33.941l86.059 86.059c15.119 15.119 40.971 4.411 40.971-16.971V296z"/></svg>
-Continue Shopping
+Continuer les achats
 </a>`;
   cartFull.innerHTML = fullCart;
 
@@ -74,7 +74,7 @@ Continue Shopping
   }
 }
 
-// afficher le compteur
+// Updater la quantité totale du panier
 let totalQuantity = [];
 
 for (let m = 0; m < productInLocalStorage.length; m++) {
@@ -85,9 +85,7 @@ for (let m = 0; m < productInLocalStorage.length; m++) {
 const reducer1 = (accumulator, currentValue) => accumulator + currentValue;
 const cartTotalQuantity = totalQuantity.reduce(reducer1, 0).toLocaleString();
 console.log(cartTotalQuantity);
-
-const cartCounterList = document.getElementById("cartCounterAlert");
-cartCounterList.innerText = cartTotalQuantity;
+localStorage.setItem("totalQty", cartTotalQuantity);
 
 //******Supprimer des éléments du panier
 let deleteBtn = document.querySelectorAll(".deleteBtn");
@@ -108,7 +106,6 @@ for (let k = 0; k < deleteBtn.length; k++) {
     );
 
     localStorage.setItem("products", JSON.stringify(productInLocalStorage));
-
     window.location.reload();
   });
 }
@@ -123,6 +120,8 @@ console.log(deleteAllBtn);
 deteleAllBtn.addEventListener("click", (e) => {
   e.preventDefault;
   localStorage.removeItem("products");
+  removeKeyLocalStorage("total");
+  removeKeyLocalStorage("totalQty");
 
   window.location.reload();
 });
@@ -138,7 +137,7 @@ for (let k = 0; k < productInLocalStorage.length; k++) {
 const reducer = (accumulator, currentValue) => accumulator + currentValue;
 const cartTotalPrice = totalPrice.reduce(reducer, 0).toLocaleString();
 console.log(cartTotalPrice);
-localStorage.setItem("total", cartTotalPrice);
+localStorage.setItem("totalPrice", cartTotalPrice);
 
 const displayTotalPriceHtml = `<div>${cartTotalPrice} €</div>`;
 

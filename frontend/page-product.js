@@ -23,8 +23,12 @@ function putTeddyOnPage(data) {
 
   teddyDetails.innerHTML += `
     <h3 id="teddyName" class="text-gray-700 uppercase text-lg">${data.name}</h3>
-    <p class="text-indigo-500 mt-3">Description : <span id="teddyDescription">${data.description}</span>
-    <p class="text-gray-500 mt-3">Prix : <span id="teddyPrice">${data.price}</span> € </span>`;
+    <p class="text-indigo-500 mt-3">Description : <span id="teddyDescription">${
+      data.description
+    }</span>
+    <p class="text-gray-500 mt-3">Prix : <span id="teddyPrice">${
+      parseFloat(data.price) / 100
+    }</span> € </span>`;
   teddyImage.innerHTML += `
     <img class="h-full w-full rounded-md object-cover max-w-lg mx-auto"
     src="${data.imageUrl}" alt="Ours en peluche"/>`;
@@ -58,7 +62,9 @@ function putTeddiesOnPage(data) {
         </div>
         <div class="px-5 py-3">
           <h3 class="text-gray-700 uppercase">${teddy.name}</h3>
-          <span class="text-gray-500 mt-2">${teddy.price} €</span>
+          <span class="text-gray-500 mt-2">${
+            parseFloat(teddy.price) / 100
+          } €</span>
         </div>
       </div>
         </a>
@@ -174,6 +180,7 @@ function addToCart(option) {
 
   const cartCounterList = document.getElementById("cartCounterAlert");
   cartCounterList.innerText = cartTotalQuantity;
+  localStorage.setItem("totalQty", cartTotalQuantity);
 
   // afficher la dropdown
   const cartPosition = document.getElementById("cartStructure");
