@@ -120,10 +120,9 @@ console.log(deleteAllBtn);
 deteleAllBtn.addEventListener("click", (e) => {
   e.preventDefault;
   localStorage.removeItem("products");
-  removeKeyLocalStorage("total");
-  removeKeyLocalStorage("totalQty");
-
   window.location.reload();
+  localStorage.removeItem("totalPrice");
+  localStorage.removeItem("totalQty");
 });
 
 //******Calculer le montant total du panier

@@ -3,7 +3,7 @@
 const idOrder = localStorage.getItem("orderId");
 console.log(idOrder);
 
-const totalPrice = localStorage.getItem("total");
+const totalPrice = localStorage.getItem("totalPrice");
 console.log(totalPrice);
 
 // Injection des infos dans la page confirmation
