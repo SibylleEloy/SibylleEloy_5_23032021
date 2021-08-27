@@ -3,7 +3,7 @@ console.log(productInLocalStorage);
 
 //----------------Gestion du panier et localStorage---------------------
 
-// afficher les produits dans le panier
+// Afficher les produits dans le panier
 
 const cartPosition = document.querySelector("#container-products-cart");
 const cartFull = document.querySelector("#fullCart");
@@ -87,7 +87,7 @@ const cartTotalQuantity = totalQuantity.reduce(reducer1, 0).toLocaleString();
 console.log(cartTotalQuantity);
 localStorage.setItem("totalQty", cartTotalQuantity);
 
-//******Supprimer des éléments du panier
+// Supprimer des éléments du panier
 let deleteBtn = document.querySelectorAll(".deleteBtn");
 console.log(deleteBtn);
 
@@ -97,9 +97,6 @@ for (let k = 0; k < deleteBtn.length; k++) {
 
     productInLocalStorage.splice(k, 1);
 
-    // productInLocalStorage = productInLocalStorage.filter(
-    //   (element) => element.id !== idToDelete
-    // );
     console.log(
       "element courant du panier",
       JSON.stringify(productInLocalStorage)
@@ -110,7 +107,7 @@ for (let k = 0; k < deleteBtn.length; k++) {
   });
 }
 
-//  ******Supprimer le panier en totalité
+// Supprimer le panier en totalité
 const detelAllBtnHtml = `<div class="flex mt-4"><button id="deleteAllBtn" class="uppercase p-3 flex items-center  border border-red-600 text-red-600 max-w-max shadow-sm hover:shadow-lg rounded-full w-12 h-12 ">
 <svg width="32" height="32" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32" style="transform: rotate(360deg);"><path d="M12 12h2v12h-2z" fill="currentColor"></path><path d="M18 12h2v12h-2z" fill="currentColor"></path><path d="M4 6v2h2v20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8h2V6zm4 22V8h16v20z" fill="currentColor"></path><path d="M12 2h8v2h-8z" fill="currentColor"></path></svg>
         </button></div>`;
@@ -125,7 +122,7 @@ deteleAllBtn.addEventListener("click", (e) => {
   localStorage.removeItem("totalQty");
 });
 
-//******Calculer le montant total du panier
+// Calculer le montant total du panier
 let totalPrice = [];
 
 for (let k = 0; k < productInLocalStorage.length; k++) {
@@ -145,7 +142,7 @@ document.getElementById("totalCost").innerHTML = displayTotalPriceHtml;
 
 //-------------------Récupérer les données Checkout------------------------
 
-//***Afficher le formulaire
+// Afficher le formulaire
 const displayFormHtml = () => {
   const formPosition = document.getElementById("form");
   const structureForm = `<label class="font-medium inline-block mb-3 text-sm uppercase">Contact</label>
@@ -233,7 +230,7 @@ const displayFormHtml = () => {
 
 displayFormHtml();
 
-// checkout récupérer les données dans le localStorage et stocker produits et données clients
+// Checkout récupérer les données dans le localStorage et stocker produits et données clients
 
 function store() {
   const contact = {
@@ -246,7 +243,7 @@ function store() {
 
   console.log(contact);
 
-  //*****Validation des données
+  // Validation des données
   const textAlert = (value) => {
     return `${value}: Numbers and symbols are not allowed \n Min 3 to max 20 characters`;
   };
@@ -332,26 +329,6 @@ function store() {
   } else {
     alert("Please fill the form");
   }
-
-  // const promise = fetch("http://localhost:3000/api/teddies/order", {
-  //   method: "POST",
-  //   body: JSON.stringify(order),
-  //   headers: {
-  //     "Content-Type": "application/json",
-  //   },
-  // });
-
-  // console.log(promise);
-
-  // promise.then(async (response) => {
-  //   try {
-  //     const content = await response.json();
-  //     console.log(content);
-  //   } catch (e) {
-  //     console.log(e);
-  //   }
-  // });
-  // window.location.href = "page-confirmation.html";
 }
 
 function sendToServer(contact, products) {
